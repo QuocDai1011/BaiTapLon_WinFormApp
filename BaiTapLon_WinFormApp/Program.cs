@@ -38,13 +38,14 @@ namespace BaiTapLon_WinFormApp
 
 
             // 4. Đăng ký Form cần dùng DI
-            ;            services.AddTransient<Form1>();
+            services.AddTransient<Form1>();
+            services.AddTransient<TeacherMainForm>();
             // 5. Build provider
             var provider = services.BuildServiceProvider();
 
             // 6. Chạy WinForms
             ApplicationConfiguration.Initialize();
-            Application.Run(provider.GetRequiredService<Form1>());
+            Application.Run(provider.GetRequiredService<TeacherMainForm>());
         }
     }
 }
