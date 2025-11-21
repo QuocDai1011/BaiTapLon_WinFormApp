@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="DataHelpers\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\SystemAccess\" />
+    <Folder Include="Views\Student\" />
+    <Folder Include="Views\Teacher\UserControls\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt" Version="1.0.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.27.8" />
+    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.21">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
