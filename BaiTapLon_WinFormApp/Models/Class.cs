@@ -37,6 +37,9 @@ public partial class Class
     [Column("shift")]
     public int Shift { get; set; }
 
+    [NotMapped]
+    public string pathImage { get; set; }
+
     [Column("status")]
     public bool Status { get; set; }
 
