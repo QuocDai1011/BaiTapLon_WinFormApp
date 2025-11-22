@@ -15,12 +15,12 @@
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\SystemAccess\" />
     <Folder Include="Views\Student\" />
-    <Folder Include="Views\Teacher\UserControls\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BCrypt" Version="1.0.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="CloudinaryDotNet" Version="1.27.8" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.21" />

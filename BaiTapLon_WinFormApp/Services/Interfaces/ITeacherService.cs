@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BaiTapLon_WinFormApp.Services.Interfaces
 {
-    public interface IStudentService
+    public interface ITeacherService
     {
-        List<Student> getAll();
-        string create();
+        Teacher GetTeacherById(int id);
+        int UpdateProfile(int id, Teacher teacherUpdated);
     }
 }

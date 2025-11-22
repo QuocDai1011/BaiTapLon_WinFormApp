@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace BaiTapLon_WinFormApp.Repositories.Interfaces
 {
-    public interface IStudentRepository
+    public interface IClassRepository
     {
-        List<Student> getAll();
-        string create();
+        List<Class> GetAllClassesByIdTeacher(int teacherId);
     }
 }

@@ -1,12 +1,13 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using BaiTapLon_WinFormApp.Models;
-using BaiTapLon_WinFormApp.Views.Teacher;
-using BaiTapLon_WinFormApp.Repositories.Interfaces;
+﻿using BaiTapLon_WinFormApp.Models;
 using BaiTapLon_WinFormApp.Repositories.Implementations;
-using BaiTapLon_WinFormApp.Services.Interfaces;
+using BaiTapLon_WinFormApp.Repositories.Interfaces;
+using BaiTapLon_WinFormApp.Services;
 using BaiTapLon_WinFormApp.Services.Implementations;
+using BaiTapLon_WinFormApp.Services.Interfaces;
+using BaiTapLon_WinFormApp.Views.Teacher;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BaiTapLon_WinFormApp
 {
@@ -31,15 +32,29 @@ namespace BaiTapLon_WinFormApp
                 options.UseSqlServer(config.GetConnectionString("EnglishCenterDb")));
 
             //Đăng ký các service cho Repository ở đây
-            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped <IClassRepository, ClassRepository>();
+            services.AddScoped <ICourseRepository, CourseRepository>();
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
 
             //Đăng ký các service cho Service ở đây
-            services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped <IClassService, ClassService>();
+            services.AddScoped <ICourseService, CourseService>();
+            services.AddScoped<ITeacherService, TeacherService>();
 
+            //Dăng ký ServiceHub
+            services.AddScoped<ServiceHub>();
 
             // 4. Đăng ký Form cần dùng DI
             services.AddTransient<Form1>();
-            services.AddTransient<TeacherMainForm>();
+            int teacherId = 1; // hoặc lấy từ Login
+            services.AddTransient<TeacherMainForm>(provider =>
+            {
+                return new TeacherMainForm(
+                    provider.GetRequiredService<ServiceHub>(),
+                    teacherId
+                );
+            });
+
             // 5. Build provider
             var provider = services.BuildServiceProvider();
 
