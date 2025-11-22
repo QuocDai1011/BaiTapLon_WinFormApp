@@ -5,7 +5,6 @@
         private System.ComponentModel.IContainer components = null;
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
@@ -36,7 +35,6 @@
             lblTitle = new Label();
             lblTotalStudents = new Label();
             panelActions = new Panel();
-            searchBox = new TextBox();
             btnAdd = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
@@ -94,7 +92,6 @@
             // panelActions
             // 
             panelActions.BackColor = Color.FromArgb(250, 250, 250);
-            panelActions.Controls.Add(searchBox);
             panelActions.Controls.Add(btnAdd);
             panelActions.Controls.Add(btnEdit);
             panelActions.Controls.Add(btnDelete);
@@ -107,15 +104,6 @@
             panelActions.Size = new Size(1400, 80);
             panelActions.TabIndex = 1;
             // 
-            // searchBox
-            // 
-            searchBox.Font = new Font("Segoe UI", 11F);
-            searchBox.Location = new Point(20, 20);
-            searchBox.Name = "searchBox";
-            searchBox.PlaceholderText = "🔍 Tìm kiếm theo tên, email, SĐT...";
-            searchBox.Size = new Size(350, 32);
-            searchBox.TabIndex = 0;
-            // 
             // btnAdd
             // 
             btnAdd.BackColor = Color.FromArgb(46, 125, 50);
@@ -123,7 +111,7 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(390, 18);
+            btnAdd.Location = new Point(20, 18);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(150, 38);
             btnAdd.TabIndex = 1;
@@ -138,7 +126,7 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(555, 18);
+            btnEdit.Location = new Point(176, 17);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(120, 38);
             btnEdit.TabIndex = 2;
@@ -153,7 +141,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(690, 18);
+            btnDelete.Location = new Point(302, 17);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(120, 38);
             btnDelete.TabIndex = 3;
@@ -297,7 +285,6 @@
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelActions.ResumeLayout(false);
-            panelActions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStudents).EndInit();
             ResumeLayout(false);
         }

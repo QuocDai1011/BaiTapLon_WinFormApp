@@ -35,14 +35,14 @@ namespace BaiTapLon_WinFormApp
             // Đăng ký cho service thì dùng singleton 
 
             //Đăng ký các service cho Repository ở đây
-            services.AddSingleton<IStudentRepository, StudentRepository>();
-            services.AddSingleton<IClassRepository, ClassRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IClassRepository, ClassRepository>();
 
             //Đăng ký các service cho Service ở đây
-            services.AddSingleton<IStudentService, StudentService>();
-            services.AddSingleton<IClassService, ClassService>();
+            services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IClassService, ClassService>();
 
-            services.AddSingleton<ServiceHub>();
+            services.AddScoped<ServiceHub>();
 
             // 4. Đăng ký Form cần dùng DI (form thì phải là addtransient)
             services.AddTransient<Form1>();

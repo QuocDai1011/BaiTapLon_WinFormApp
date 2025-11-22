@@ -10,5 +10,20 @@ namespace BaiTapLon_WinFormApp.Services.Interfaces
     public interface IClassService
     {
         List<Class> getAllClass();
+        string createClass(Class newClass);
+        string updateClass(Class updatedClass);
+        string deleteClass(int classId);
+
+        Class? getClassById(int classId);
+
+        List<Student> getAllStudentByClassId(int classId);
+        
+        string addStudentsToClass(int classId, List<int> studentIds);
+        string removeStudentFromClass(int classId, int studentId);
+
+        void UpdateExpiredClasses();
+        void ActivateUpcomingClasses();
+
+        void RunAutoUpdate();
     }
 }

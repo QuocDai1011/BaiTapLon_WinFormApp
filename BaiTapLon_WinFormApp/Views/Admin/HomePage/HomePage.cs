@@ -23,6 +23,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
         {
             InitializeComponent();
             _serviceHub = serviceHub;
+            _serviceHub.ClassService.RunAutoUpdate();
             loadDashBoardView();
         }
 
@@ -73,14 +74,13 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             resetFeatureClicked();
             pnlMyClass.BackColor = Color.FromArgb(240, 245, 255);
             List<Class> classes = _serviceHub.ClassService.getAllClass().ToList();
-            List<(string, string, string)> cardItems = new List<(string, string, string)>();
+            List<(string, string, int)> cardItems = new List<(string, string, int)>();
             foreach (Class cls in classes) {
                 // Sử dụng StartDate - EndDate hoặc imagePath nếu muốn hiển thị ảnh
                 string typeText = $"{cls.StartDate:dd/MM/yyyy} - {cls.EndDate:dd/MM/yyyy}";
-                string imagePath = cls.pathImage ?? "defaultBanner2.jpg"; // nếu chưa có ảnh
-                cardItems.Add((cls.ClassName, typeText, imagePath));
+                cardItems.Add((cls.ClassName, typeText, cls.ClassId));
             }
-            var myClassView = new ManageClass(cardItems) { 
+            var myClassView = new ManageClass(cardItems, _serviceHub) { 
                 Dock = DockStyle.Fill
             };
             contentPanel.Controls.Clear();
