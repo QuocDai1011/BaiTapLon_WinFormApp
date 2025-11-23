@@ -1,7 +1,4 @@
-﻿
-using Microsoft.IdentityModel.Tokens;
-
-namespace BaiTapLon_WinFormApp
+﻿namespace BaiTapLon_WinFormApp
 {
     public partial class Form1 : Form
     {
