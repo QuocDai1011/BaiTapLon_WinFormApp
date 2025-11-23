@@ -22,6 +22,12 @@ namespace EnglishCenterManagement.UI.Views
             RenderRightActions();
             RenderSideBarAction();
         }
+        private string GetAsset(string fileName)
+        {
+            string basePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets");
+            return Path.Combine(basePath, fileName);
+        }
+
 
         private void RenderActions()
         {
@@ -29,23 +35,22 @@ namespace EnglishCenterManagement.UI.Views
             {
                 new ActionItem()
                 {
-
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\home.png"),
+                    Icon = Image.FromFile(GetAsset("home.png")),
                     OnClick = () => MessageBox.Show("Trang Home")
                 },
                 new ActionItem()
                 {
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\group.png"),
+                    Icon = Image.FromFile(GetAsset("group.png")),
                     OnClick = () => MessageBox.Show("Trang Group")
                 },
                 new ActionItem()
                 {
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\calendar.png"),
+                    Icon = Image.FromFile(GetAsset("calendar.png")),
                     OnClick = () => MessageBox.Show("Trang Calendar")
                 },
                 new ActionItem()
                 {
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\classroom.png"),
+                    Icon = Image.FromFile(GetAsset("classroom.png")),
                     OnClick = () => MessageBox.Show("Trang People")
                 }
             };
@@ -93,30 +98,31 @@ namespace EnglishCenterManagement.UI.Views
             {
                 new ActionItem()
                 {
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\user.png"),
+                    Icon = Image.FromFile(GetAsset("user.png")),
                     Text = "Đại",
                     OnClick = () => MessageBox.Show("Trang Home")
                 },
                 new ActionItem()
                 {
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\add.png"),
+                    Icon = Image.FromFile(GetAsset("add.png")),
                     OnClick = () => MessageBox.Show("Trang Home")
                 },
                 new ActionItem()
                 {
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\multiButton.png"),
+                    Icon = Image.FromFile(GetAsset("multiButton.png")),
                     OnClick = () => MessageBox.Show("Trang Home")
                 },
                 new ActionItem()
                 {
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\chat.png"),
+                    Icon = Image.FromFile(GetAsset("chat.png")),
                     OnClick = () => MessageBox.Show("Trang Home")
                 },
                 new ActionItem()
                 {
-                    Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\bell.png"),
+                    Icon = Image.FromFile(GetAsset("bell.png")),
                     OnClick = () => MessageBox.Show("Trang Home")
-                },
+                }
+
             };
 
             foreach (var icon in icons)
@@ -158,12 +164,43 @@ namespace EnglishCenterManagement.UI.Views
             // Danh sách các nút
             List<SidebarItem> sidebarItems = new List<SidebarItem>()
             {
-                new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\user.png"), Text = "Quốc Đại", OnClick = () => RenderDetailStudent(15) },
-                new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\store.png"), Text = "Marketplace", OnClick = () => renderCourse(15) },
-                new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\classroom.png"), Text = "Lớp học của tôi", OnClick = () => RenderRegisteredClasses(15) },
-                new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\calendar.png"), Text = "Lịch cá nhân", OnClick = () => { } },
-                new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\details.png"), Text = "Bài tập về nhà", OnClick = () => { } },
-                new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\shopping-cart.png"), Text = "Đơn hàng", OnClick = () => { } },
+                new SidebarItem()
+                {
+                    Icon = Image.FromFile(GetAsset("user.png")),
+                    Text = "User",
+                    OnClick = () => RenderDetailStudent(15)
+                },
+                new SidebarItem()
+                {
+                    Icon = Image.FromFile(GetAsset("store.png")),
+                    Text = "Marketplace",
+                    OnClick = () => renderCourse(15)
+                },
+                new SidebarItem()
+                {
+                    Icon = Image.FromFile(GetAsset("classroom.png")),
+                    Text = "Lớp học của tôi",
+                    OnClick = () => RenderRegisteredClasses(15)
+                },
+                new SidebarItem()
+                {
+                    Icon = Image.FromFile(GetAsset("calendar.png")),
+                    Text = "Lịch cá nhân",
+                    OnClick = () => { }
+                },
+                new SidebarItem()
+                {
+                    Icon = Image.FromFile(GetAsset("details.png")),
+                    Text = "Bài tập về nhà",
+                    OnClick = () => { }
+                },
+                new SidebarItem()
+                {
+                    Icon = Image.FromFile(GetAsset("shopping-cart.png")),
+                    Text = "Đơn hàng",
+                    OnClick = () => { }
+                }
+
             };
 
             int buttonWidth = flowPanel.ClientSize.Width - flowPanel.Padding.Horizontal; // rộng theo panel
