@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
+namespace BaiTapLon_WinFormApp.Views.Admin.MyClassUI
 {
     public partial class ManageClass : UserControl
     {
@@ -94,10 +94,14 @@ namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
                 // Tạo context menu
                 ContextMenuStrip contextMenu = new ContextMenuStrip();
 
-                ToolStripMenuItem editItem = new ToolStripMenuItem("Chỉnh sửa", null, (s, ev) =>
+                if(classClicked.Status) // Chỉ cho phép edit nếu lớp đang hoạt động
                 {
-                    EditClass(classClicked);
-                });
+                    ToolStripMenuItem editItem = new ToolStripMenuItem("Chỉnh sửa", null, (s, ev) =>
+                    {
+                        EditClass(classClicked);
+                    });
+                    contextMenu.Items.Add(editItem);
+                }
 
                 ToolStripMenuItem viewItem = new ToolStripMenuItem("Xem chi tiết", null, (s, ev) =>
                 {
@@ -110,7 +114,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
                 });
 
                 contextMenu.Items.Add(viewItem);
-                contextMenu.Items.Add(editItem);
+                //contextMenu.Items.Add(editItem);
                 contextMenu.Items.Add(new ToolStripSeparator());
                 contextMenu.Items.Add(deleteItem);
 
@@ -126,7 +130,9 @@ namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
             classCards.Clear();
             pnlHeader.Visible = false;
 
-            var classDetailForm = new ClassDetail(_servicehub, classObj);
+            var classDetailForm = new ClassDetail(_servicehub, classObj) { 
+                    onBack = BackToClassList
+            };
 
             // Thêm nút Back để quay lại danh sách
             Button btnBack = new Button

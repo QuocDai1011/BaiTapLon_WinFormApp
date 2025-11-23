@@ -1,4 +1,4 @@
-﻿namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
+﻿namespace BaiTapLon_WinFormApp.Views.Admin.MyClassUI
 {
     partial class ClassCard
     {

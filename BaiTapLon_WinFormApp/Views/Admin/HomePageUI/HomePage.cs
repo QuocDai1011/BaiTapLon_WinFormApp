@@ -12,8 +12,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BaiTapLon_WinFormApp.Views.Admin.MyClass;
-namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
+using BaiTapLon_WinFormApp.Views.Admin.MyClassUI;
+using BaiTapLon_WinFormApp.Views.Admin.ProfileUI;
+using BaiTapLon_WinFormApp.Views.Admin.CourseUI;
+namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
 {
     public partial class HomePage : Form
     {
@@ -37,7 +39,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
         private void loadDashBoardView()
         {
             contentPanel.Controls.Clear();
-            var dashboardView = new DashBoard();
+            var dashboardView = new DashBoard(_serviceHub);
             dashboardView.Dock = DockStyle.Fill;
             contentPanel.Controls.Add(dashboardView);
         }
@@ -58,7 +60,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             pnlMyClass.BackColor = Color.White;
             pnlInvoice.BackColor = Color.White;
             pnlDashboard.BackColor = Color.White;
-            pnlCalendar.BackColor = Color.White;
+            pnlCourse.BackColor = Color.White;
             pnlStudentList.BackColor = Color.White;
 
         }
@@ -67,6 +69,10 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
         {
             resetFeatureClicked();
             pnlManagement.BackColor = Color.FromArgb(240, 245, 255);
+            contentPanel.Controls.Clear();
+            var manageView = new UserProfile(_serviceHub, 1);
+            contentPanel.Controls.Add(manageView);
+
         }
 
         private void myClass_Click(object sender, EventArgs e)
@@ -75,12 +81,14 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             pnlMyClass.BackColor = Color.FromArgb(240, 245, 255);
             List<Class> classes = _serviceHub.ClassService.getAllClass().ToList();
             List<(string, string, int)> cardItems = new List<(string, string, int)>();
-            foreach (Class cls in classes) {
+            foreach (Class cls in classes)
+            {
                 // Sử dụng StartDate - EndDate hoặc imagePath nếu muốn hiển thị ảnh
                 string typeText = $"{cls.StartDate:dd/MM/yyyy} - {cls.EndDate:dd/MM/yyyy}";
                 cardItems.Add((cls.ClassName, typeText, cls.ClassId));
             }
-            var myClassView = new ManageClass(cardItems, _serviceHub) { 
+            var myClassView = new ManageClass(cardItems, _serviceHub)
+            {
                 Dock = DockStyle.Fill
             };
             contentPanel.Controls.Clear();
@@ -93,13 +101,16 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             resetFeatureClicked();
             pnlInvoice.BackColor = Color.FromArgb(240, 245, 255);
         }
-
-        private void calendar_Click(object sender, EventArgs e)
+        private void Courses_Click(object sender, EventArgs e)
         {
             resetFeatureClicked();
-            pnlCalendar.BackColor = Color.FromArgb(240, 245, 255);
-        }
+            pnlCourse.BackColor = Color.FromArgb(240, 245, 255);
 
+            contentPanel.Controls.Clear();
+            var courseManagementView = new ManageCourse(_serviceHub);
+            courseManagementView.Dock = DockStyle.Fill;
+            contentPanel.Controls.Add(courseManagementView);
+        }
 
     }
 }

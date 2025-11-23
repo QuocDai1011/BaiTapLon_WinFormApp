@@ -1,6 +1,6 @@
 ﻿using FontAwesome.Sharp;
 
-namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
+namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
 {
     partial class HomePage
     {
@@ -13,13 +13,6 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
 
         // Header Components
         private PictureBox logoBox;
-        private IconButton btnPlus;
-        private IconButton btnProfile;
-
-        // Sidebar Components
-        private Panel pnlManagement;
-        private PictureBox picManagement;
-        private Label lblManagement;
 
         private Panel pnlDashboard;
         private PictureBox picDashboard;
@@ -35,9 +28,9 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
 
         private Label lblShortcuts;
 
-        private Panel pnlCalendar;
-        private PictureBox picCalendar;
-        private Label lblCalendar;
+        private Panel pnlCourse;
+        private PictureBox picCourse;
+        private Label lblCourse;
 
         private Panel pnlInvoice;
         private PictureBox picInvoice;
@@ -55,12 +48,15 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
         private void InitializeComponent()
         {
             sidebarPanel = new Panel();
+            pnlManagement = new Panel();
+            lblManagement = new Label();
+            picManagement = new PictureBox();
             pnlInvoice = new Panel();
             lblInvoice = new Label();
             picInvoice = new PictureBox();
-            pnlCalendar = new Panel();
-            lblCalendar = new Label();
-            picCalendar = new PictureBox();
+            pnlCourse = new Panel();
+            lblCourse = new Label();
+            picCourse = new PictureBox();
             lblShortcuts = new Label();
             pnlStudentList = new Panel();
             lblStudentList = new Label();
@@ -71,28 +67,23 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             pnlDashboard = new Panel();
             lblDashboard = new Label();
             picDashboard = new PictureBox();
-            pnlManagement = new Panel();
-            lblManagement = new Label();
-            picManagement = new PictureBox();
             headerPanel = new Panel();
-            btnProfile = new IconButton();
-            btnPlus = new IconButton();
+            label1 = new Label();
             logoBox = new PictureBox();
             contentPanel = new Panel();
-            label1 = new Label();
             sidebarPanel.SuspendLayout();
+            pnlManagement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picManagement).BeginInit();
             pnlInvoice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picInvoice).BeginInit();
-            pnlCalendar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picCalendar).BeginInit();
+            pnlCourse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picCourse).BeginInit();
             pnlStudentList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picStudentList).BeginInit();
             pnlMyClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picMyClass).BeginInit();
             pnlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picDashboard).BeginInit();
-            pnlManagement.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picManagement).BeginInit();
             headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoBox).BeginInit();
             SuspendLayout();
@@ -100,18 +91,53 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             // sidebarPanel
             // 
             sidebarPanel.BackColor = Color.White;
+            sidebarPanel.Controls.Add(pnlManagement);
             sidebarPanel.Controls.Add(pnlInvoice);
-            sidebarPanel.Controls.Add(pnlCalendar);
+            sidebarPanel.Controls.Add(pnlCourse);
             sidebarPanel.Controls.Add(lblShortcuts);
             sidebarPanel.Controls.Add(pnlStudentList);
             sidebarPanel.Controls.Add(pnlMyClass);
             sidebarPanel.Controls.Add(pnlDashboard);
-            sidebarPanel.Controls.Add(pnlManagement);
             sidebarPanel.Dock = DockStyle.Left;
             sidebarPanel.Location = new Point(0, 0);
             sidebarPanel.Name = "sidebarPanel";
             sidebarPanel.Size = new Size(280, 900);
             sidebarPanel.TabIndex = 0;
+            // 
+            // pnlManagement
+            // 
+            pnlManagement.BackColor = Color.White;
+            pnlManagement.Controls.Add(lblManagement);
+            pnlManagement.Controls.Add(picManagement);
+            pnlManagement.Cursor = Cursors.Hand;
+            pnlManagement.Location = new Point(10, 12);
+            pnlManagement.Name = "pnlManagement";
+            pnlManagement.Size = new Size(260, 55);
+            pnlManagement.TabIndex = 7;
+            pnlManagement.Click += management_Click;
+            // 
+            // lblManagement
+            // 
+            lblManagement.AutoSize = true;
+            lblManagement.Font = new Font("Segoe UI", 10F);
+            lblManagement.ForeColor = Color.FromArgb(50, 50, 50);
+            lblManagement.Location = new Point(60, 18);
+            lblManagement.Name = "lblManagement";
+            lblManagement.Size = new Size(72, 23);
+            lblManagement.TabIndex = 1;
+            lblManagement.Text = "Quản Lý";
+            lblManagement.Click += management_Click;
+            // 
+            // picManagement
+            // 
+            picManagement.Image = Properties.Resources.logo2019_png_1;
+            picManagement.Location = new Point(15, 12);
+            picManagement.Name = "picManagement";
+            picManagement.Size = new Size(32, 32);
+            picManagement.SizeMode = PictureBoxSizeMode.Zoom;
+            picManagement.TabIndex = 0;
+            picManagement.TabStop = false;
+            picManagement.Click += management_Click;
             // 
             // pnlInvoice
             // 
@@ -148,47 +174,47 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             picInvoice.TabStop = false;
             picInvoice.Click += invoice_Click;
             // 
-            // pnlCalendar
+            // pnlCourse
             // 
-            pnlCalendar.BackColor = Color.White;
-            pnlCalendar.Controls.Add(lblCalendar);
-            pnlCalendar.Controls.Add(picCalendar);
-            pnlCalendar.Cursor = Cursors.Hand;
-            pnlCalendar.Location = new Point(10, 330);
-            pnlCalendar.Name = "pnlCalendar";
-            pnlCalendar.Size = new Size(260, 55);
-            pnlCalendar.TabIndex = 5;
-            pnlCalendar.Click += calendar_Click;
+            pnlCourse.BackColor = Color.White;
+            pnlCourse.Controls.Add(lblCourse);
+            pnlCourse.Controls.Add(picCourse);
+            pnlCourse.Cursor = Cursors.Hand;
+            pnlCourse.Location = new Point(10, 286);
+            pnlCourse.Name = "pnlCourse";
+            pnlCourse.Size = new Size(260, 55);
+            pnlCourse.TabIndex = 5;
+            pnlCourse.Click += this.Courses_Click;
             // 
-            // lblCalendar
+            // lblCourse
             // 
-            lblCalendar.AutoSize = true;
-            lblCalendar.Font = new Font("Segoe UI", 10F);
-            lblCalendar.ForeColor = Color.FromArgb(50, 50, 50);
-            lblCalendar.Location = new Point(60, 18);
-            lblCalendar.Name = "lblCalendar";
-            lblCalendar.Size = new Size(106, 23);
-            lblCalendar.TabIndex = 1;
-            lblCalendar.Text = "Lịch cá nhân";
-            lblCalendar.Click += calendar_Click;
+            lblCourse.AutoSize = true;
+            lblCourse.Font = new Font("Segoe UI", 10F);
+            lblCourse.ForeColor = Color.FromArgb(50, 50, 50);
+            lblCourse.Location = new Point(60, 18);
+            lblCourse.Name = "lblCourse";
+            lblCourse.Size = new Size(165, 23);
+            lblCourse.TabIndex = 1;
+            lblCourse.Text = "Danh sách khóa học";
+            lblCourse.Click += this.Courses_Click;
             // 
-            // picCalendar
+            // picCourse
             // 
-            picCalendar.Image = Properties.Resources.myCalendar;
-            picCalendar.Location = new Point(15, 12);
-            picCalendar.Name = "picCalendar";
-            picCalendar.Size = new Size(32, 32);
-            picCalendar.SizeMode = PictureBoxSizeMode.Zoom;
-            picCalendar.TabIndex = 0;
-            picCalendar.TabStop = false;
-            picCalendar.Click += calendar_Click;
+            picCourse.Image = Properties.Resources.EasyStore;
+            picCourse.Location = new Point(15, 12);
+            picCourse.Name = "picCourse";
+            picCourse.Size = new Size(32, 32);
+            picCourse.SizeMode = PictureBoxSizeMode.Zoom;
+            picCourse.TabIndex = 0;
+            picCourse.TabStop = false;
+            picCourse.Click += this.Courses_Click;
             // 
             // lblShortcuts
             // 
             lblShortcuts.AutoSize = true;
             lblShortcuts.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblShortcuts.ForeColor = Color.Gray;
-            lblShortcuts.Location = new Point(25, 295);
+            lblShortcuts.Location = new Point(10, 372);
             lblShortcuts.Name = "lblShortcuts";
             lblShortcuts.Size = new Size(112, 20);
             lblShortcuts.TabIndex = 4;
@@ -299,47 +325,10 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             picDashboard.TabStop = false;
             picDashboard.Click += dashboard_Click;
             // 
-            // pnlManagement
-            // 
-            pnlManagement.BackColor = Color.White;
-            pnlManagement.Controls.Add(lblManagement);
-            pnlManagement.Controls.Add(picManagement);
-            pnlManagement.Cursor = Cursors.Hand;
-            pnlManagement.Location = new Point(10, 20);
-            pnlManagement.Name = "pnlManagement";
-            pnlManagement.Size = new Size(260, 55);
-            pnlManagement.TabIndex = 0;
-            pnlManagement.Click += management_Click;
-            // 
-            // lblManagement
-            // 
-            lblManagement.AutoSize = true;
-            lblManagement.Font = new Font("Segoe UI", 10F);
-            lblManagement.ForeColor = Color.FromArgb(50, 50, 50);
-            lblManagement.Location = new Point(60, 18);
-            lblManagement.Name = "lblManagement";
-            lblManagement.Size = new Size(72, 23);
-            lblManagement.TabIndex = 1;
-            lblManagement.Text = "Quản Lý";
-            lblManagement.Click += management_Click;
-            // 
-            // picManagement
-            // 
-            picManagement.Image = Properties.Resources.logo2019_png_1;
-            picManagement.Location = new Point(15, 12);
-            picManagement.Name = "picManagement";
-            picManagement.Size = new Size(32, 32);
-            picManagement.SizeMode = PictureBoxSizeMode.Zoom;
-            picManagement.TabIndex = 0;
-            picManagement.TabStop = false;
-            picManagement.Click += management_Click;
-            // 
             // headerPanel
             // 
             headerPanel.BackColor = Color.White;
             headerPanel.Controls.Add(label1);
-            headerPanel.Controls.Add(btnProfile);
-            headerPanel.Controls.Add(btnPlus);
             headerPanel.Controls.Add(logoBox);
             headerPanel.Dock = DockStyle.Top;
             headerPanel.Location = new Point(280, 0);
@@ -347,39 +336,16 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             headerPanel.Size = new Size(1220, 80);
             headerPanel.TabIndex = 1;
             // 
-            // btnProfile
+            // label1
             // 
-            btnProfile.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnProfile.BackColor = Color.FromArgb(228, 230, 235);
-            btnProfile.Cursor = Cursors.Hand;
-            btnProfile.FlatAppearance.BorderSize = 0;
-            btnProfile.FlatStyle = FlatStyle.Flat;
-            btnProfile.IconChar = IconChar.CaretDown;
-            btnProfile.IconColor = Color.FromArgb(65, 65, 65);
-            btnProfile.IconFont = IconFont.Auto;
-            btnProfile.IconSize = 24;
-            btnProfile.Location = new Point(1138, 3);
-            btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(70, 70);
-            btnProfile.TabIndex = 10;
-            btnProfile.UseVisualStyleBackColor = false;
-            // 
-            // btnPlus
-            // 
-            btnPlus.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnPlus.BackColor = Color.FromArgb(228, 230, 235);
-            btnPlus.Cursor = Cursors.Hand;
-            btnPlus.FlatAppearance.BorderSize = 0;
-            btnPlus.FlatStyle = FlatStyle.Flat;
-            btnPlus.IconChar = IconChar.Add;
-            btnPlus.IconColor = Color.FromArgb(65, 65, 65);
-            btnPlus.IconFont = IconFont.Auto;
-            btnPlus.IconSize = 24;
-            btnPlus.Location = new Point(1033, 3);
-            btnPlus.Name = "btnPlus";
-            btnPlus.Size = new Size(70, 70);
-            btnPlus.TabIndex = 6;
-            btnPlus.UseVisualStyleBackColor = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(145, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(663, 41);
+            label1.TabIndex = 11;
+            label1.Text = "Hệ thống quản lý trung tâm anh ngữ Tre Xanh";
             // 
             // logoBox
             // 
@@ -402,17 +368,6 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             contentPanel.Size = new Size(1220, 820);
             contentPanel.TabIndex = 2;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.ForeColor = Color.Green;
-            label1.Location = new Point(145, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(663, 41);
-            label1.TabIndex = 11;
-            label1.Text = "Hệ thống quản lý trung tâm anh ngữ Tre Xanh";
-            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -427,12 +382,15 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             WindowState = FormWindowState.Maximized;
             sidebarPanel.ResumeLayout(false);
             sidebarPanel.PerformLayout();
+            pnlManagement.ResumeLayout(false);
+            pnlManagement.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picManagement).EndInit();
             pnlInvoice.ResumeLayout(false);
             pnlInvoice.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picInvoice).EndInit();
-            pnlCalendar.ResumeLayout(false);
-            pnlCalendar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picCalendar).EndInit();
+            pnlCourse.ResumeLayout(false);
+            pnlCourse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picCourse).EndInit();
             pnlStudentList.ResumeLayout(false);
             pnlStudentList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picStudentList).EndInit();
@@ -442,14 +400,14 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
             pnlDashboard.ResumeLayout(false);
             pnlDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picDashboard).EndInit();
-            pnlManagement.ResumeLayout(false);
-            pnlManagement.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picManagement).EndInit();
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)logoBox).EndInit();
             ResumeLayout(false);
         }
         private Label label1;
+        private Panel pnlManagement;
+        private Label lblManagement;
+        private PictureBox picManagement;
     }
 }

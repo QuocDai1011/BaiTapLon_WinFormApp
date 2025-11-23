@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
+namespace BaiTapLon_WinFormApp.Views.Admin.MyClassUI
 {
     public partial class ClassAddEditForm : Form
     {

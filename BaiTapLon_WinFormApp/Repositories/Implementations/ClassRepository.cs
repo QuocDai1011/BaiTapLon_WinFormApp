@@ -315,5 +315,20 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
                 throw new Exception($"Lỗi khi xóa học viên khỏi lớp: {ex.Message}");
             }
         }
+
+        public List<Class> StudentInClassById(int studentId)
+        {
+            try
+            {
+                return _context.Classes
+                    .Include(c => c.Students)
+                    .Where(c => c.Students.Any(s => s.StudentId == studentId))
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi lấy danh sách lớp của học viên: {ex.Message}");
+            }
+        }
     }
 }

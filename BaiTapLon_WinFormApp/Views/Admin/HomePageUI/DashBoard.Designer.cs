@@ -1,4 +1,4 @@
-﻿namespace BaiTapLon_WinFormApp.Views.Admin.HomePage
+﻿namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
 {
     partial class DashBoard
     {

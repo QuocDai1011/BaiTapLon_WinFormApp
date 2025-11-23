@@ -267,5 +267,44 @@ namespace BaiTapLon_WinFormApp.Utils
 
             return errors;
         }
+
+        // CourseCode chỉ chứa chữ cái, số, '_' hoặc '+'
+        private static readonly Regex validCodeRegex = new Regex(@"^[A-Za-z0-9_+]+$", RegexOptions.Compiled);
+
+        // CourseName cho phép chữ cái, số, dấu cách, dấu tiếng Việt và ký tự _+
+        private static readonly Regex validNameRegex = new Regex(@"^[A-Za-z0-9_+\sÀ-ỹ]+$", RegexOptions.Compiled);
+
+        public static List<string> ValidateCourse(Course course)
+        {
+            var errors = new List<string>();
+
+            // Validate CourseCode
+            if (string.IsNullOrWhiteSpace(course.CourseCode?.Trim()))
+            {
+                errors.Add("CourseCode không được để trống.");
+            }
+            else if (!validCodeRegex.IsMatch(course.CourseCode.Trim()))
+            {
+                errors.Add("CourseCode chỉ được chứa chữ cái, số, '_' hoặc '+'.");
+            }
+
+            // Validate CourseName
+            if (string.IsNullOrWhiteSpace(course.CourseName?.Trim()))
+            {
+                errors.Add("CourseName không được để trống.");
+            }
+            else if (!validNameRegex.IsMatch(course.CourseName.Trim()))
+            {
+                errors.Add("CourseName chỉ được chứa chữ cái, số, dấu cách, '_' hoặc '+'.");
+            }
+
+            // Validate TutitionFee
+            if (course.TutitionFee < 0)
+            {
+                errors.Add("TutitionFee phải lớn hơn hoặc bằng 0.");
+            }
+
+            return errors;
+        }
     }
 }
