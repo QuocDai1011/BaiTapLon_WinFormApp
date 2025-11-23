@@ -4,6 +4,7 @@ using BaiTapLon_WinFormApp.Repositories.Interfaces;
 using BaiTapLon_WinFormApp.Services;
 using BaiTapLon_WinFormApp.Services.Implementations;
 using BaiTapLon_WinFormApp.Services.Interfaces;
+using BaiTapLon_WinFormApp.Views.Admin.HomePage;
 using BaiTapLon_WinFormApp.Views.SystemAcess.Login;
 using BaiTapLon_WinFormApp.Views.Teacher;
 using Microsoft.EntityFrameworkCore;
@@ -34,10 +35,12 @@ namespace BaiTapLon_WinFormApp
 
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddSingleton<IClassRepository, ClassRepository>();
 
             //Đăng ký các service cho Service ở đây
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddSingleton<IClassService, ClassService>();
 
             services.AddScoped<ServiceHub>();
 
@@ -45,6 +48,7 @@ namespace BaiTapLon_WinFormApp
             // 4. Đăng ký Form cần dùng DI
             services.AddTransient<Form1>();
             services.AddTransient<LoginForm>();
+            services.AddTransient<HomePage>();
             // 5. Build provider
             var provider = services.BuildServiceProvider();
 
@@ -54,3 +58,4 @@ namespace BaiTapLon_WinFormApp
         }
     }
 }
+

@@ -9,7 +9,13 @@ namespace BaiTapLon_WinFormApp.Services.Interfaces
 {
     public interface IStudentService
     {
-        List<Student> getAll();
-        string create();
+        List<Student> getAllStudent();
+        string createStudent(Student student);
+
+        string updateStudent(Student student);
+
+        string deleteStudent(int studentId);
+
+        Student? GetStudentById(int studentId);
     }
 }

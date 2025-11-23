@@ -1,4 +1,5 @@
-﻿using BaiTapLon_WinFormApp.Services.Interfaces;
+﻿using BaiTapLon_WinFormApp.Services.Implementations;
+using BaiTapLon_WinFormApp.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,16 @@ namespace BaiTapLon_WinFormApp.Services
     {
         public IStudentService StudentService { get; }
         public IAuthService AuthService { get; }
+        public IClassService ClassService { get; }
         public ServiceHub(
             IStudentService studentService,
-            IAuthService authService
+            IAuthService authService,
+            IClassService classService
             )
         {
             StudentService = studentService;
             AuthService = authService;
+            ClassService = classService;
         }
     }
 }
