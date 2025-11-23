@@ -21,7 +21,20 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public List<Class> GetAllClassesByIdTeacher(int teacherId)
         {
-            return _classRepository.GetAllClassesByIdTeacher(teacherId);
+            var classes = _classRepository.GetAllClassesByIdTeacher(teacherId);
+            var today = DateOnly.FromDateTime(DateTime.Now);
+            foreach (var clazz in classes)
+            {
+                if (clazz.EndDate < today)
+                {
+                    clazz.Status = false;
+                }
+                else
+                {
+                    clazz.Status = true;
+                }
+            }
+            return classes;
         }
 
         public string addStudentsToClass(int classId, List<int> studentIds)
@@ -138,8 +151,9 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public string deleteClass(int classId)
         {
-            try{ 
-                if(classId <= 0)
+            try
+            {
+                if (classId <= 0)
                 {
                     return "Class ID không hợp lệ.";
                 }
@@ -158,7 +172,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public List<Student> getAllStudentByClassId(int classId)
         {
-            
+
             try
             {
                 if (classId <= 0)
@@ -191,7 +205,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
             }
         }
 
-      
+
         public string updateClass(Class updatedClass)
         {
             try
@@ -253,7 +267,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                     return "Học viên không có trong lớp này.";
                 }
 
-                
+
 
                 // Xóa học viên khỏi lớp
                 string errorMessage = _classRepository.RemoveStudentFromClass(classId, studentId);
@@ -377,12 +391,12 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public List<Class> StudentInClassByStudentId(int studentId)
         {
-            if(studentId <= 0)
+            if (studentId <= 0)
             {
                 return new List<Class>();
             }
 
-            return _classRepository.StudentInClassById(studentId);   
+            return _classRepository.StudentInClassById(studentId);
         }
 
         public void RemoveStudentFromClasses(int studentId)

@@ -1,4 +1,3 @@
-﻿
 namespace BaiTapLon_WinFormApp
 {
     public partial class Form1 : Form

@@ -122,6 +122,7 @@
             pnTopContent.ShadowDecoration.CustomizableEdges = customizableEdges3;
             pnTopContent.Size = new Size(2120, 211);
             pnTopContent.TabIndex = 10;
+            pnTopContent.Paint += pnTopContent_Paint;
             // 
             // ptbAvt
             // 

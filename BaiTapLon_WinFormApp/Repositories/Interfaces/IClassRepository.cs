@@ -11,7 +11,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Interfaces
     public interface IClassRepository
     {
         List<Class> GetAllClassesByIdTeacher(int teacherId);
-
         List<Class> GetAllClasses();
 
         string CreateClass(Class newClass);

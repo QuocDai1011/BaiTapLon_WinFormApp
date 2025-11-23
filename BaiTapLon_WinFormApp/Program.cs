@@ -36,16 +36,19 @@ namespace BaiTapLon_WinFormApp
             services.AddDbContext<EnglishCenterDbContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("EnglishCenterDb")));
 
+            //Đăng ký các repository cho Repository ở đây
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddSingleton<IClassRepository, ClassRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
 
             //Đăng ký các service cho Service ở đây
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddSingleton<IClassService, ClassService>();
             services.AddScoped<ICourseService, CourseService>();
+            services.AddScoped<ITeacherService, TeacherService>();
 
             services.AddScoped<ServiceHub>();
 

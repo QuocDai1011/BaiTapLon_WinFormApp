@@ -1,4 +1,5 @@
 ﻿using BaiTapLon_WinFormApp.Models;
+using BaiTapLon_WinFormApp.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,19 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
     {
         private readonly Class _class;
         private readonly Course _course;
-        public UCCourseCard(Course course, Class clazz)
+        private Panel _parentContainer;
+        private readonly ServiceHub _serviceHub;
+        private readonly int _teacherId;
+        public UCCourseCard(Course course, Class clazz, Panel flowLayoutPanel,
+            ServiceHub serviceHub, int teacherId
+            )
         {
             InitializeComponent();
             _course = course;
             _class = clazz;
+            _parentContainer = flowLayoutPanel;
+            _serviceHub = serviceHub;
+            _teacherId = teacherId;
             RenderCourse();
         }
 
@@ -50,6 +59,18 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
             {
                 lblStatusValue.Text = "Đang hoạt động";
             }
+        }
+
+        private void LoadUC(UserControl uc)
+        {
+            _parentContainer.Controls.Clear();
+            //uc.Dock = DockStyle.Fill;
+            _parentContainer.Controls.Add(uc);
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            LoadUC(new UCClassDetails(_parentContainer, _class, _course, _serviceHub, _teacherId));
         }
     }
 }

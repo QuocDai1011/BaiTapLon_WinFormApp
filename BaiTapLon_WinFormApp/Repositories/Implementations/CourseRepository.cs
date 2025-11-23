@@ -26,7 +26,7 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
 
             if (course == null)
             {
-                throw new KeyNotFoundException("Không tìm thấy dữ liệu khóa học.");
+                return null;
             }
             return course;
         }

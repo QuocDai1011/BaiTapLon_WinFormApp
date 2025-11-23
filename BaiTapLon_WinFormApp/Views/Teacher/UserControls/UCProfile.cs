@@ -1,4 +1,5 @@
 ﻿using BaiTapLon_WinFormApp.Services;
+using CloudinaryDotNet.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -156,8 +157,20 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                     );
-                Render();
+                //Render();
+                ReloadFormUI();
             }
+        }
+
+        public void ReloadFormUI()
+        {
+            var parent = this.FindForm() as TeacherMainForm;
+            parent?.SetTeacherName();
+        }
+
+        private void pnTopContent_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

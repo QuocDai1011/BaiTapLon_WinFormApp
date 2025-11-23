@@ -14,13 +14,14 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
     {
         private readonly Services.ServiceHub _serviceHub;
         private readonly int _teacherId;
+        private Panel pnContentRender;
 
-        public UCMyClass(Services.ServiceHub serviceHub, int teacherId)
+        public UCMyClass(Services.ServiceHub serviceHub, int teacherId, Panel flowLayoutPanel)
         {
             InitializeComponent();
             _serviceHub = serviceHub;
             _teacherId = teacherId;
-
+            pnContentRender = flowLayoutPanel;
             LoadCourse();
         }
 
@@ -43,7 +44,7 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
                         continue;
                     }
 
-                    var courseCard = new UCCourseCard(course, c);
+                    var courseCard = new UCCourseCard(course, c, pnContentRender, _serviceHub, _teacherId);
                     pnContent.Controls.Add(courseCard);
                 }
                 catch(KeyNotFoundException ex)

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCourseCard));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnCourseCard = new FlowLayoutPanel();
             ptbAvatarClass = new Guna.UI2.WinForms.Guna2PictureBox();
             lblClassCode = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -81,14 +81,14 @@
             // ptbAvatarClass
             // 
             ptbAvatarClass.BorderRadius = 20;
-            ptbAvatarClass.CustomizableEdges = customizableEdges7;
+            ptbAvatarClass.CustomizableEdges = customizableEdges1;
             ptbAvatarClass.Image = Properties.Resources.lesson;
             ptbAvatarClass.ImageRotate = 0F;
             ptbAvatarClass.InitialImage = (Image)resources.GetObject("ptbAvatarClass.InitialImage");
             ptbAvatarClass.Location = new Point(36, 16);
             ptbAvatarClass.Margin = new Padding(23, 3, 3, 3);
             ptbAvatarClass.Name = "ptbAvatarClass";
-            ptbAvatarClass.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            ptbAvatarClass.ShadowDecoration.CustomizableEdges = customizableEdges2;
             ptbAvatarClass.Size = new Size(206, 75);
             ptbAvatarClass.SizeMode = PictureBoxSizeMode.Zoom;
             ptbAvatarClass.TabIndex = 0;
@@ -118,13 +118,13 @@
             // 
             // guna2PictureBox6
             // 
-            guna2PictureBox6.CustomizableEdges = customizableEdges11;
+            guna2PictureBox6.CustomizableEdges = customizableEdges3;
             guna2PictureBox6.Image = Properties.Resources.group;
             guna2PictureBox6.ImageRotate = 0F;
             guna2PictureBox6.Location = new Point(0, 2);
             guna2PictureBox6.Margin = new Padding(0, 2, 2, 2);
             guna2PictureBox6.Name = "guna2PictureBox6";
-            guna2PictureBox6.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2PictureBox6.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2PictureBox6.Size = new Size(47, 27);
             guna2PictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox6.TabIndex = 0;
@@ -226,7 +226,7 @@
             // 
             btnDetails.BorderRadius = 20;
             btnDetails.Cursor = Cursors.Hand;
-            btnDetails.CustomizableEdges = customizableEdges9;
+            btnDetails.CustomizableEdges = customizableEdges5;
             btnDetails.DisabledState.BorderColor = Color.DarkGray;
             btnDetails.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDetails.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -237,10 +237,11 @@
             btnDetails.Location = new Point(16, 302);
             btnDetails.Margin = new Padding(3, 20, 3, 3);
             btnDetails.Name = "btnDetails";
-            btnDetails.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnDetails.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnDetails.Size = new Size(226, 43);
             btnDetails.TabIndex = 6;
             btnDetails.Text = "Chi tiết";
+            btnDetails.Click += btnDetails_Click;
             // 
             // UCCourseCard
             // 
