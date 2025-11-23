@@ -22,8 +22,11 @@ namespace BaiTapLon_WinFormApp.Services.Interfaces
         string removeStudentFromClass(int classId, int studentId);
 
         void UpdateExpiredClasses();
+
         void ActivateUpcomingClasses();
 
         void RunAutoUpdate();
+        List<Class> StudentInClassByStudentId(int studentId);
+        void RemoveStudentFromClasses(int studentId);
     }
 }

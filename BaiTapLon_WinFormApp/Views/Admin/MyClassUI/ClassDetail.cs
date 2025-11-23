@@ -12,13 +12,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
+namespace BaiTapLon_WinFormApp.Views.Admin.MyClassUI
 {
     public partial class ClassDetail : UserControl
     {
         private readonly ServiceHub _serviceHub;
         private Class _class; // Bỏ readonly để có thể update
-
+        public Action onBack { get; set; }
         public ClassDetail(ServiceHub serviceHub, Class classes)
         {
             _serviceHub = serviceHub;
@@ -221,6 +221,8 @@ namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
                 // Gọi service để xóa (đúng thứ tự tham số: classId, studentId)
                 string errorMessage = _serviceHub.ClassService.removeStudentFromClass(_class.ClassId, studentId);
 
+                // cập nhật lại số lượng sinh viên hiện tại trong lớp
+                _serviceHub.ClassService.RemoveStudentFromClasses(studentId);
 
 
                 if (errorMessage == null)
@@ -243,12 +245,37 @@ namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
 
         private void btnOpenClass_Click(object sender, EventArgs e)
         {
-            if(!MessageHelper.ShowConfirmation("Bạn có chắc chắn muốn mở lại lớp học này không ?"))
-            {
+            if (!MessageHelper.ShowConfirmation("Bạn có chắc chắn muốn mở lại lớp học này không?"))
                 return;
-            }
 
-            MessageHelper.ShowSuccess("Chức năng đang được phát triển.");
+            try
+            {
+                _class.Status = true;
+
+                // Ngày bắt đầu là hôm nay
+                _class.StartDate = DateOnly.FromDateTime(DateTime.Now);
+
+                // Ngày kết thúc = ngày bắt đầu + 4 tháng
+                _class.EndDate = _class.StartDate.AddMonths(4);
+
+                string error = _serviceHub.ClassService.updateClass(_class);
+                if(error != null)
+                {
+                    MessageHelper.ShowError("Có lỗi khi mở lại lớp học:\n" + error);
+                    return;
+                }
+                MessageHelper.ShowSuccess("Mở lại lớp học thành công!");
+
+                // Reload toàn bộ dữ liệu từ database
+                //ClassDetail_Load();
+                // Tự động quay lại danh sách lớp
+                onBack?.Invoke();
+            }
+            catch (Exception ex)
+            {
+                MessageHelper.ShowError("Có lỗi khi mở lại lớp học:\n" + ex.Message);
+            }
         }
+
     }
 }

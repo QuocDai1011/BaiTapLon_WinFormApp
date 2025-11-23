@@ -198,7 +198,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                 {
                     // Sử dụng StringBuilder để gộp các lỗi
                     StringBuilder sb = new StringBuilder();
-                    sb.AppendLine("Có lỗi khi tạo lớp học:");
+                    sb.AppendLine("Có lỗi khi cập nhật lớp học:");
                     sb.AppendLine(); // Dòng trống
 
                     foreach (var error in errorMessages)
@@ -215,7 +215,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
             }
             catch (Exception ex)
             {
-                return $"Lỗi khi tạo lớp học: {ex.Message}";
+                return $"Lỗi khi cập nhật lớp học: {ex.Message}";
             }
         }
 
@@ -369,6 +369,27 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
             Console.WriteLine($"[ERROR {DateTime.Now}] {message}");
             // Hoặc: File.AppendAllText("errors.txt", $"{DateTime.Now}: {message}\n");
         }
-        
+
+        public List<Class> StudentInClassByStudentId(int studentId)
+        {
+            if(studentId <= 0)
+            {
+                return new List<Class>();
+            }
+
+            return _classRepository.StudentInClassById(studentId);   
+        }
+
+        public void RemoveStudentFromClasses(int studentId)
+        {
+            var classes = StudentInClassByStudentId(studentId);
+
+            foreach (var classEntity in classes)
+            {
+                classEntity.CurrentStudent = Math.Max(0, classEntity.CurrentStudent - 1);
+                classEntity.UpdateAt = DateOnly.FromDateTime(DateTime.Now);
+                _classRepository.UpdateClass(classEntity);
+            }
+        }
     }
 }

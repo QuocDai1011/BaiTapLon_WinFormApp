@@ -13,12 +13,16 @@ namespace BaiTapLon_WinFormApp.Services
         public IStudentService StudentService { get; }
         public IAuthService AuthService { get; }
         public IClassService ClassService { get; }
+
+        public ICourseService CourseService { get; }
         public ServiceHub(
             IStudentService studentService,
             IAuthService authService,
-            IClassService classService
+            IClassService classService,
+            ICourseService courseService
             )
         {
+            CourseService = courseService;
             StudentService = studentService;
             AuthService = authService;
             ClassService = classService;

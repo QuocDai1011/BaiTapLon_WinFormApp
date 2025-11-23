@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace BaiTapLon_WinFormApp.Views.Admin.MyClass
+namespace BaiTapLon_WinFormApp.Views.Admin.MyClassUI
 {
     public partial class AddStudentsToClassForm : Form
     {

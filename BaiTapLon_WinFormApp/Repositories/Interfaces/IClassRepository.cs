@@ -39,5 +39,7 @@ namespace BaiTapLon_WinFormApp.Repositories.Interfaces
         List<Class> GetUpcomingClasses(DateOnly today);
 
         void RemoveAllStudentsFromClass(int classId);
+
+        List<Class> StudentInClassById(int studentId);
     }
 }

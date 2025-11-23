@@ -28,8 +28,9 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                     return string.Join("\n", errors);
 
                 // Thêm học sinh vào DB
-                _studentRepository.createStudent(student);
-                return null;
+                var repoResult = _studentRepository.createStudent(student);
+                // Repository returns empty string on success, or an error message
+                return string.IsNullOrEmpty(repoResult) ? null : repoResult;
             }
             catch (Exception ex)
             {
@@ -46,8 +47,9 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
             {
                 try
                 {
-                    _studentRepository.deleteStudent(studentId);
-                    errorMessage =  "Xóa học sinh thành công.";
+                    errorMessage = _studentRepository.deleteStudent(studentId);
+                    if (string.IsNullOrEmpty(errorMessage))
+                        errorMessage = "Xóa học sinh thành công.";
                 }
                 catch (Exception ex)
                 {
@@ -90,9 +92,9 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                 var errors = Validator.ValidateStudent(student);
                 if (errors.Any())
                     return string.Join("\n", errors);
-                // Thêm học sinh vào DB
-                _studentRepository.updateStudent(student);
-                return null;
+                // Cập nhật học sinh trong DB
+                var repoResult = _studentRepository.updateStudent(student);
+                return string.IsNullOrEmpty(repoResult) ? null : repoResult;
             }
             catch (Exception ex)
             {
