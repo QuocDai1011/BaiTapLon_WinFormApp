@@ -105,10 +105,11 @@
             pnBackgroundForget.CustomizableEdges = customizableEdges33;
             pnBackgroundForget.FillColor = Color.MediumAquamarine;
             pnBackgroundForget.FillColor2 = Color.PaleGreen;
-            pnBackgroundForget.Location = new Point(3, 2);
+            pnBackgroundForget.Location = new Point(3, 3);
+            pnBackgroundForget.Margin = new Padding(3, 4, 3, 4);
             pnBackgroundForget.Name = "pnBackgroundForget";
             pnBackgroundForget.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            pnBackgroundForget.Size = new Size(766, 719);
+            pnBackgroundForget.Size = new Size(875, 959);
             pnBackgroundForget.TabIndex = 63;
             // 
             // pnB3
@@ -121,10 +122,11 @@
             pnB3.Controls.Add(guna2HtmlLabel6);
             pnB3.Controls.Add(guna2HtmlLabel3);
             pnB3.CustomizableEdges = customizableEdges7;
-            pnB3.Location = new Point(111, 153);
+            pnB3.Location = new Point(127, 204);
+            pnB3.Margin = new Padding(3, 4, 3, 4);
             pnB3.Name = "pnB3";
             pnB3.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            pnB3.Size = new Size(543, 337);
+            pnB3.Size = new Size(621, 449);
             pnB3.TabIndex = 2;
             pnB3.Visible = false;
             // 
@@ -138,10 +140,11 @@
             btnSubmitPass.FillColor = Color.Black;
             btnSubmitPass.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSubmitPass.ForeColor = Color.White;
-            btnSubmitPass.Location = new Point(39, 251);
+            btnSubmitPass.Location = new Point(45, 335);
+            btnSubmitPass.Margin = new Padding(3, 4, 3, 4);
             btnSubmitPass.Name = "btnSubmitPass";
             btnSubmitPass.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnSubmitPass.Size = new Size(466, 45);
+            btnSubmitPass.Size = new Size(533, 60);
             btnSubmitPass.TabIndex = 6;
             btnSubmitPass.Text = "Đặt lại mật khẩu";
             btnSubmitPass.Click += btnSubmitPass_Click;
@@ -157,12 +160,13 @@
             txbConfirmNewPass.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbConfirmNewPass.Font = new Font("Segoe UI", 9F);
             txbConfirmNewPass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbConfirmNewPass.Location = new Point(40, 200);
+            txbConfirmNewPass.Location = new Point(46, 267);
+            txbConfirmNewPass.Margin = new Padding(3, 5, 3, 5);
             txbConfirmNewPass.Name = "txbConfirmNewPass";
             txbConfirmNewPass.PlaceholderText = "Nhập lại mật khảu mới";
             txbConfirmNewPass.SelectedText = "";
             txbConfirmNewPass.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txbConfirmNewPass.Size = new Size(465, 36);
+            txbConfirmNewPass.Size = new Size(531, 48);
             txbConfirmNewPass.TabIndex = 5;
             txbConfirmNewPass.UseSystemPasswordChar = true;
             // 
@@ -170,9 +174,10 @@
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
             guna2HtmlLabel7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel7.Location = new Point(39, 169);
+            guna2HtmlLabel7.Location = new Point(45, 225);
+            guna2HtmlLabel7.Margin = new Padding(3, 4, 3, 4);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(170, 23);
+            guna2HtmlLabel7.Size = new Size(219, 30);
             guna2HtmlLabel7.TabIndex = 4;
             guna2HtmlLabel7.Text = "Xác nhận mật khẩu mới";
             // 
@@ -187,12 +192,13 @@
             txbNewPass.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbNewPass.Font = new Font("Segoe UI", 9F);
             txbNewPass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbNewPass.Location = new Point(40, 114);
+            txbNewPass.Location = new Point(46, 152);
+            txbNewPass.Margin = new Padding(3, 5, 3, 5);
             txbNewPass.Name = "txbNewPass";
             txbNewPass.PlaceholderText = "Nhập mật khảu mới";
             txbNewPass.SelectedText = "";
             txbNewPass.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txbNewPass.Size = new Size(465, 36);
+            txbNewPass.Size = new Size(531, 48);
             txbNewPass.TabIndex = 3;
             txbNewPass.UseSystemPasswordChar = true;
             // 
@@ -200,9 +206,10 @@
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel6.Location = new Point(39, 83);
+            guna2HtmlLabel6.Location = new Point(45, 111);
+            guna2HtmlLabel6.Margin = new Padding(3, 4, 3, 4);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(102, 23);
+            guna2HtmlLabel6.Size = new Size(130, 30);
             guna2HtmlLabel6.TabIndex = 2;
             guna2HtmlLabel6.Text = "Mật khẩu mới";
             // 
@@ -210,9 +217,10 @@
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(188, 33);
+            guna2HtmlLabel3.Location = new Point(215, 44);
+            guna2HtmlLabel3.Margin = new Padding(3, 4, 3, 4);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(165, 32);
+            guna2HtmlLabel3.Size = new Size(204, 38);
             guna2HtmlLabel3.TabIndex = 0;
             guna2HtmlLabel3.Text = "Đặt lại mật khẩu";
             // 
@@ -227,10 +235,11 @@
             pnB2.Controls.Add(guna2HtmlLabel2);
             pnB2.Controls.Add(guna2HtmlLabel1);
             pnB2.CustomizableEdges = customizableEdges25;
-            pnB2.Location = new Point(139, 153);
+            pnB2.Location = new Point(159, 204);
+            pnB2.Margin = new Padding(3, 4, 3, 4);
             pnB2.Name = "pnB2";
             pnB2.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            pnB2.Size = new Size(485, 431);
+            pnB2.Size = new Size(554, 575);
             pnB2.TabIndex = 1;
             pnB2.Visible = false;
             // 
@@ -239,9 +248,10 @@
             lblResendOTP.BackColor = Color.Transparent;
             lblResendOTP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblResendOTP.ForeColor = Color.ForestGreen;
-            lblResendOTP.Location = new Point(192, 365);
+            lblResendOTP.Location = new Point(219, 487);
+            lblResendOTP.Margin = new Padding(3, 4, 3, 4);
             lblResendOTP.Name = "lblResendOTP";
-            lblResendOTP.Size = new Size(108, 23);
+            lblResendOTP.Size = new Size(138, 30);
             lblResendOTP.TabIndex = 12;
             lblResendOTP.Text = "Gửi lại mã OTP";
             lblResendOTP.Click += btnSendEmail_Click;
@@ -252,10 +262,11 @@
             btnConfirmOTP.FillColor = Color.Black;
             btnConfirmOTP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConfirmOTP.ForeColor = Color.White;
-            btnConfirmOTP.Location = new Point(48, 314);
+            btnConfirmOTP.Location = new Point(55, 419);
+            btnConfirmOTP.Margin = new Padding(3, 4, 3, 4);
             btnConfirmOTP.Name = "btnConfirmOTP";
             btnConfirmOTP.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnConfirmOTP.Size = new Size(389, 45);
+            btnConfirmOTP.Size = new Size(445, 60);
             btnConfirmOTP.TabIndex = 13;
             btnConfirmOTP.Text = "Xác nhận";
             btnConfirmOTP.Click += btnConfirmOPT_Click;
@@ -265,9 +276,10 @@
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel4.ForeColor = Color.Black;
-            guna2HtmlLabel4.Location = new Point(211, 164);
+            guna2HtmlLabel4.Location = new Point(241, 219);
+            guna2HtmlLabel4.Margin = new Padding(3, 4, 3, 4);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(70, 27);
+            guna2HtmlLabel4.Size = new Size(88, 34);
             guna2HtmlLabel4.TabIndex = 10;
             guna2HtmlLabel4.Text = "Mã OPT";
             // 
@@ -281,10 +293,11 @@
             guna2Panel2.Controls.Add(txbOTPcode3);
             guna2Panel2.Controls.Add(txbOTPcode4);
             guna2Panel2.CustomizableEdges = customizableEdges23;
-            guna2Panel2.Location = new Point(47, 184);
+            guna2Panel2.Location = new Point(54, 245);
+            guna2Panel2.Margin = new Padding(3, 4, 3, 4);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Panel2.Size = new Size(390, 102);
+            guna2Panel2.Size = new Size(446, 136);
             guna2Panel2.TabIndex = 10;
             // 
             // txbOTPcode5
@@ -298,12 +311,13 @@
             txbOTPcode5.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbOTPcode5.Font = new Font("Segoe UI", 9F);
             txbOTPcode5.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbOTPcode5.Location = new Point(328, 20);
+            txbOTPcode5.Location = new Point(375, 27);
+            txbOTPcode5.Margin = new Padding(3, 5, 3, 5);
             txbOTPcode5.Name = "txbOTPcode5";
             txbOTPcode5.PlaceholderText = "";
             txbOTPcode5.SelectedText = "";
             txbOTPcode5.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txbOTPcode5.Size = new Size(57, 59);
+            txbOTPcode5.Size = new Size(65, 79);
             txbOTPcode5.TabIndex = 9;
             // 
             // txbOTPcode0
@@ -317,12 +331,13 @@
             txbOTPcode0.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbOTPcode0.Font = new Font("Segoe UI", 9F);
             txbOTPcode0.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbOTPcode0.Location = new Point(1, 20);
+            txbOTPcode0.Location = new Point(1, 27);
+            txbOTPcode0.Margin = new Padding(3, 5, 3, 5);
             txbOTPcode0.Name = "txbOTPcode0";
             txbOTPcode0.PlaceholderText = "";
             txbOTPcode0.SelectedText = "";
             txbOTPcode0.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txbOTPcode0.Size = new Size(57, 59);
+            txbOTPcode0.Size = new Size(65, 79);
             txbOTPcode0.TabIndex = 4;
             // 
             // txbOTPcode2
@@ -336,12 +351,13 @@
             txbOTPcode2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbOTPcode2.Font = new Font("Segoe UI", 9F);
             txbOTPcode2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbOTPcode2.Location = new Point(133, 20);
+            txbOTPcode2.Location = new Point(152, 27);
+            txbOTPcode2.Margin = new Padding(3, 5, 3, 5);
             txbOTPcode2.Name = "txbOTPcode2";
             txbOTPcode2.PlaceholderText = "";
             txbOTPcode2.SelectedText = "";
             txbOTPcode2.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txbOTPcode2.Size = new Size(57, 59);
+            txbOTPcode2.Size = new Size(65, 79);
             txbOTPcode2.TabIndex = 8;
             // 
             // txbOTPcode1
@@ -355,12 +371,13 @@
             txbOTPcode1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbOTPcode1.Font = new Font("Segoe UI", 9F);
             txbOTPcode1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbOTPcode1.Location = new Point(67, 20);
+            txbOTPcode1.Location = new Point(77, 27);
+            txbOTPcode1.Margin = new Padding(3, 5, 3, 5);
             txbOTPcode1.Name = "txbOTPcode1";
             txbOTPcode1.PlaceholderText = "";
             txbOTPcode1.SelectedText = "";
             txbOTPcode1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txbOTPcode1.Size = new Size(57, 59);
+            txbOTPcode1.Size = new Size(65, 79);
             txbOTPcode1.TabIndex = 5;
             // 
             // txbOTPcode3
@@ -374,12 +391,13 @@
             txbOTPcode3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbOTPcode3.Font = new Font("Segoe UI", 9F);
             txbOTPcode3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbOTPcode3.Location = new Point(198, 20);
+            txbOTPcode3.Location = new Point(226, 27);
+            txbOTPcode3.Margin = new Padding(3, 5, 3, 5);
             txbOTPcode3.Name = "txbOTPcode3";
             txbOTPcode3.PlaceholderText = "";
             txbOTPcode3.SelectedText = "";
             txbOTPcode3.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            txbOTPcode3.Size = new Size(57, 59);
+            txbOTPcode3.Size = new Size(65, 79);
             txbOTPcode3.TabIndex = 7;
             // 
             // txbOTPcode4
@@ -393,18 +411,20 @@
             txbOTPcode4.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbOTPcode4.Font = new Font("Segoe UI", 9F);
             txbOTPcode4.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbOTPcode4.Location = new Point(263, 20);
+            txbOTPcode4.Location = new Point(301, 27);
+            txbOTPcode4.Margin = new Padding(3, 5, 3, 5);
             txbOTPcode4.Name = "txbOTPcode4";
             txbOTPcode4.PlaceholderText = "";
             txbOTPcode4.SelectedText = "";
             txbOTPcode4.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            txbOTPcode4.Size = new Size(57, 59);
+            txbOTPcode4.Size = new Size(65, 79);
             txbOTPcode4.TabIndex = 6;
             // 
             // lblRequestEmail
             // 
             lblRequestEmail.BackColor = Color.Transparent;
             lblRequestEmail.Location = new Point(0, 0);
+            lblRequestEmail.Margin = new Padding(3, 4, 3, 4);
             lblRequestEmail.Name = "lblRequestEmail";
             lblRequestEmail.Size = new Size(3, 2);
             lblRequestEmail.TabIndex = 14;
@@ -415,9 +435,10 @@
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = Color.DimGray;
-            guna2HtmlLabel2.Location = new Point(48, 97);
+            guna2HtmlLabel2.Location = new Point(55, 129);
+            guna2HtmlLabel2.Margin = new Padding(3, 4, 3, 4);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(403, 23);
+            guna2HtmlLabel2.Size = new Size(512, 30);
             guna2HtmlLabel2.TabIndex = 1;
             guna2HtmlLabel2.Text = "Mã xác thực gồm 6 chữ số đã được gửi đến gmail của bạn:";
             // 
@@ -425,9 +446,10 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(178, 55);
+            guna2HtmlLabel1.Location = new Point(203, 73);
+            guna2HtmlLabel1.Margin = new Padding(3, 4, 3, 4);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(140, 32);
+            guna2HtmlLabel1.Size = new Size(173, 38);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "Nhập mã OPT";
             // 
@@ -439,13 +461,14 @@
             pnB1.Controls.Add(label33);
             pnB1.Controls.Add(label32);
             pnB1.CustomizableEdges = customizableEdges31;
-            pnB1.Location = new Point(178, 158);
+            pnB1.Location = new Point(203, 211);
+            pnB1.Margin = new Padding(3, 4, 3, 4);
             pnB1.Name = "pnB1";
             pnB1.ShadowDecoration.BorderRadius = 12;
             pnB1.ShadowDecoration.CustomizableEdges = customizableEdges32;
             pnB1.ShadowDecoration.Depth = 10;
             pnB1.ShadowDecoration.Shadow = new Padding(5, 3, 5, 10);
-            pnB1.Size = new Size(392, 228);
+            pnB1.Size = new Size(448, 304);
             pnB1.TabIndex = 0;
             // 
             // btnSendEmail
@@ -458,10 +481,11 @@
             btnSendEmail.FillColor = Color.Black;
             btnSendEmail.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSendEmail.ForeColor = Color.White;
-            btnSendEmail.Location = new Point(33, 152);
+            btnSendEmail.Location = new Point(38, 203);
+            btnSendEmail.Margin = new Padding(3, 4, 3, 4);
             btnSendEmail.Name = "btnSendEmail";
             btnSendEmail.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            btnSendEmail.Size = new Size(328, 45);
+            btnSendEmail.Size = new Size(375, 60);
             btnSendEmail.TabIndex = 3;
             btnSendEmail.Text = "Gửi email";
             btnSendEmail.Click += btnSendEmail_Click;
@@ -477,12 +501,13 @@
             txbCurrentEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbCurrentEmail.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbCurrentEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbCurrentEmail.Location = new Point(33, 98);
+            txbCurrentEmail.Location = new Point(38, 131);
+            txbCurrentEmail.Margin = new Padding(3, 5, 3, 5);
             txbCurrentEmail.Name = "txbCurrentEmail";
             txbCurrentEmail.PlaceholderText = "Email của bạn";
             txbCurrentEmail.SelectedText = "";
             txbCurrentEmail.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            txbCurrentEmail.Size = new Size(328, 41);
+            txbCurrentEmail.Size = new Size(375, 55);
             txbCurrentEmail.TabIndex = 2;
             // 
             // label33
@@ -490,9 +515,9 @@
             label33.AutoSize = true;
             label33.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label33.ForeColor = Color.DimGray;
-            label33.Location = new Point(97, 60);
+            label33.Location = new Point(111, 80);
             label33.Name = "label33";
-            label33.Size = new Size(191, 17);
+            label33.Size = new Size(251, 23);
             label33.TabIndex = 1;
             label33.Text = "Nhập email để đặt lại mật khẩu";
             // 
@@ -500,19 +525,21 @@
             // 
             label32.AutoSize = true;
             label32.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label32.Location = new Point(125, 32);
+            label32.Location = new Point(143, 43);
             label32.Name = "label32";
-            label32.Size = new Size(127, 21);
+            label32.Size = new Size(157, 28);
             label32.TabIndex = 0;
             label32.Text = "Quên mật khẩu";
             // 
             // ForgetForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(772, 722);
+            ClientSize = new Size(882, 963);
             Controls.Add(pnBackgroundForget);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ForgetForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ForgetForm";
             Load += ForgetForm_Load;
             pnBackgroundForget.ResumeLayout(false);
