@@ -7,6 +7,7 @@ using BaiTapLon_WinFormApp.Repositories.Interfaces;
 using BaiTapLon_WinFormApp.Repositories.Implementations;
 using BaiTapLon_WinFormApp.Services.Interfaces;
 using BaiTapLon_WinFormApp.Services.Implementations;
+using EnglishCenterManagement.UI.Views;
 
 namespace BaiTapLon_WinFormApp
 {
@@ -40,12 +41,13 @@ namespace BaiTapLon_WinFormApp
             // 4. Đăng ký Form cần dùng DI
             services.AddTransient<Form1>();
             services.AddTransient<TeacherMainForm>();
+            services.AddTransient<StudentFrom>();
             // 5. Build provider
             var provider = services.BuildServiceProvider();
 
             // 6. Chạy WinForms
             ApplicationConfiguration.Initialize();
-            Application.Run(provider.GetRequiredService<TeacherMainForm>());
+            Application.Run(provider.GetRequiredService<StudentFrom>());
         }
     }
 }
