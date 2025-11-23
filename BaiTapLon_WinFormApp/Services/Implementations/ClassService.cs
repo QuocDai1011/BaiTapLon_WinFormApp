@@ -20,7 +20,20 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public List<Class> GetAllClassesByIdTeacher(int teacherId)
         {
-            return _classRepository.GetAllClassesByIdTeacher(teacherId);
+            var classes = _classRepository.GetAllClassesByIdTeacher(teacherId);
+            var today = DateOnly.FromDateTime(DateTime.Now);
+            foreach (var clazz in classes)
+            {
+                if (clazz.EndDate < today)
+                {
+                    clazz.Status = false;
+                }
+                else
+                {
+                    clazz.Status = true;
+                }
+            }
+            return classes;
         }
     }
 }

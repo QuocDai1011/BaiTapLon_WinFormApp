@@ -28,7 +28,7 @@ namespace BaiTapLon_WinFormApp.Views.Teacher
             AddClickEventToAllControls(this);
         }
 
-        private void SetTeacherName()
+        public void SetTeacherName()
         {
             try
             {
@@ -71,12 +71,12 @@ namespace BaiTapLon_WinFormApp.Views.Teacher
 
         private void btnMyClassSideBar_Click(object sender, EventArgs e)
         {
-            LoadUC(new UCMyClass(_serviceHub, _teacherId));
+            LoadUC(new UCMyClass(_serviceHub, _teacherId, pnContentRender));
         }
 
         private void btnClassHeader_Click(object sender, EventArgs e)
         {
-            LoadUC(new UCMyClass(_serviceHub, _teacherId));
+            LoadUC(new UCMyClass(_serviceHub, _teacherId, pnContentRender));
         }
 
         private void btnHomeHeader_Click(object sender, EventArgs e)
@@ -151,5 +151,6 @@ namespace BaiTapLon_WinFormApp.Views.Teacher
         {
             LoadUC(new UCProfile(_teacherId, _serviceHub));
         }
+
     }
 }
