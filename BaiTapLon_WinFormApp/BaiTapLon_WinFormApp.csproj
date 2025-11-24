@@ -9,10 +9,113 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\add.png" />
+    <None Remove="assets\assignment.png" />
+    <None Remove="assets\assignmentHomework.png" />
+    <None Remove="assets\bell.png" />
+    <None Remove="assets\calendar.png" />
+    <None Remove="assets\chat.png" />
+    <None Remove="assets\classroom.png" />
+    <None Remove="assets\delete.png" />
+    <None Remove="assets\details.png" />
+    <None Remove="assets\down.png" />
+    <None Remove="assets\group.png" />
+    <None Remove="assets\home.png" />
+    <None Remove="assets\lesson.jpg" />
+    <None Remove="assets\logo.jpg" />
+    <None Remove="assets\logoWithoutBackground.png" />
+    <None Remove="assets\multiButton.png" />
+    <None Remove="assets\myClass.png" />
+    <None Remove="assets\no-data.png" />
+    <None Remove="assets\personalSchedule.png" />
+    <None Remove="assets\search-icon.png" />
+    <None Remove="assets\shopping-cart.png" />
+    <None Remove="assets\store.png" />
+    <None Remove="assets\teacher_education_school_lecture_student_icon_141984.ico" />
+    <None Remove="assets\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\assignment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\assignmentHomework.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\bell.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\calendar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\chat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\classroom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\details.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\group.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\lesson.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\logoWithoutBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\multiButton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\myClass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\no-data.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\personalSchedule.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\search-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\shopping-cart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\store.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\teacher_education_school_lecture_student_icon_141984.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Controllers\" />
     <Folder Include="DataHelpers\" />
     <Folder Include="Views\Admin\" />
+    <Folder Include="Views\SystemAccess\" />
     <Folder Include="Views\Student\" />
     <Folder Include="Views\SystemAccess\assets\img\" />
     <Folder Include="Views\Teacher\UserControls\" />

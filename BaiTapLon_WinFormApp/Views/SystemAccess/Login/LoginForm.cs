@@ -5,6 +5,7 @@ using BaiTapLon_WinFormApp.Utils;
 using BaiTapLon_WinFormApp.Views.Admin.HomePageUI;
 using BaiTapLon_WinFormApp.Views.SystemAcess.Pages.ForgetForm;
 using BaiTapLon_WinFormApp.Views.Teacher;
+using EnglishCenterManagement.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,7 +49,7 @@ namespace BaiTapLon_WinFormApp.Views.SystemAcess.Login
             }
             else
             {
-                MessageBox.Show($"Đăng nhập thành công!");
+                MessageBox.Show($"Đăng nhập thành công! {userRole}");
                 return (true, userRole);
             }
         }
@@ -87,13 +88,13 @@ namespace BaiTapLon_WinFormApp.Views.SystemAcess.Login
                         }
                     case "students":
                         {
-                            var teacher = _serviceHub.TeacherService.getTeacherByEmai(username);
-                            if (teacher == null)
+                            var student = _serviceHub.StudentService.getStudentByEmail(username);
+                            if (student == null)
                             {
                                 MessageHelper.ShowError($"Đã có lỗi khi lấy thông tin giảng viên \n có email {username}");
                                 return;
                             }
-                            new TeacherMainForm(_serviceHub, teacher.AdminId).ShowDialog();
+                            new StudentFrom(student.StudentId).ShowDialog();
                             this.Close();
                             break;
                         }

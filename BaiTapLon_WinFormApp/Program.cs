@@ -7,6 +7,7 @@ using BaiTapLon_WinFormApp.Services.Interfaces;
 using BaiTapLon_WinFormApp.Views.Admin.HomePageUI;
 using BaiTapLon_WinFormApp.Views.SystemAcess.Login;
 using BaiTapLon_WinFormApp.Views.Teacher;
+using EnglishCenterManagement.UI.Views;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -70,6 +71,8 @@ namespace BaiTapLon_WinFormApp
             services.AddTransient<LoginForm>();
             services.AddTransient<HomePage>();
             services.AddTransient<TeacherMainForm>();
+            services.AddTransient<StudentFrom>();
+
             // 5. Build provider
             var provider = services.BuildServiceProvider();
 
