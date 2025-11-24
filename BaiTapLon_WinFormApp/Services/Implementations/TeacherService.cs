@@ -17,6 +17,19 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
         {
             _teacherRepository = teacherRepository;
         }
+
+        public Teacher? getTeacherByEmai(string email)
+        {
+            try
+            {
+               return _teacherRepository.getTeacherByEmail(email);
+
+            }catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
         public Teacher GetTeacherById(int id)
         {
             return _teacherRepository.GetTeacherById(id);

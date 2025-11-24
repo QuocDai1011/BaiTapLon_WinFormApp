@@ -26,15 +26,9 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
         private PictureBox picStudentList;
         private Label lblStudentList;
 
-        private Label lblShortcuts;
-
         private Panel pnlCourse;
         private PictureBox picCourse;
         private Label lblCourse;
-
-        private Panel pnlInvoice;
-        private PictureBox picInvoice;
-        private Label lblInvoice;
 
         protected override void Dispose(bool disposing)
         {
@@ -51,13 +45,9 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             pnlManagement = new Panel();
             lblManagement = new Label();
             picManagement = new PictureBox();
-            pnlInvoice = new Panel();
-            lblInvoice = new Label();
-            picInvoice = new PictureBox();
             pnlCourse = new Panel();
             lblCourse = new Label();
             picCourse = new PictureBox();
-            lblShortcuts = new Label();
             pnlStudentList = new Panel();
             lblStudentList = new Label();
             picStudentList = new PictureBox();
@@ -74,8 +64,6 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             sidebarPanel.SuspendLayout();
             pnlManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picManagement).BeginInit();
-            pnlInvoice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picInvoice).BeginInit();
             pnlCourse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picCourse).BeginInit();
             pnlStudentList.SuspendLayout();
@@ -92,9 +80,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             // 
             sidebarPanel.BackColor = Color.White;
             sidebarPanel.Controls.Add(pnlManagement);
-            sidebarPanel.Controls.Add(pnlInvoice);
             sidebarPanel.Controls.Add(pnlCourse);
-            sidebarPanel.Controls.Add(lblShortcuts);
             sidebarPanel.Controls.Add(pnlStudentList);
             sidebarPanel.Controls.Add(pnlMyClass);
             sidebarPanel.Controls.Add(pnlDashboard);
@@ -139,41 +125,6 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             picManagement.TabStop = false;
             picManagement.Click += management_Click;
             // 
-            // pnlInvoice
-            // 
-            pnlInvoice.BackColor = Color.White;
-            pnlInvoice.Controls.Add(lblInvoice);
-            pnlInvoice.Controls.Add(picInvoice);
-            pnlInvoice.Cursor = Cursors.Hand;
-            pnlInvoice.Location = new Point(10, 395);
-            pnlInvoice.Name = "pnlInvoice";
-            pnlInvoice.Size = new Size(260, 55);
-            pnlInvoice.TabIndex = 6;
-            pnlInvoice.Click += invoice_Click;
-            // 
-            // lblInvoice
-            // 
-            lblInvoice.AutoSize = true;
-            lblInvoice.Font = new Font("Segoe UI", 10F);
-            lblInvoice.ForeColor = Color.FromArgb(50, 50, 50);
-            lblInvoice.Location = new Point(60, 18);
-            lblInvoice.Name = "lblInvoice";
-            lblInvoice.Size = new Size(76, 23);
-            lblInvoice.TabIndex = 1;
-            lblInvoice.Text = "Hóa đơn";
-            lblInvoice.Click += invoice_Click;
-            // 
-            // picInvoice
-            // 
-            picInvoice.Image = Properties.Resources.Receipt;
-            picInvoice.Location = new Point(15, 12);
-            picInvoice.Name = "picInvoice";
-            picInvoice.Size = new Size(32, 32);
-            picInvoice.SizeMode = PictureBoxSizeMode.Zoom;
-            picInvoice.TabIndex = 0;
-            picInvoice.TabStop = false;
-            picInvoice.Click += invoice_Click;
-            // 
             // pnlCourse
             // 
             pnlCourse.BackColor = Color.White;
@@ -184,7 +135,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             pnlCourse.Name = "pnlCourse";
             pnlCourse.Size = new Size(260, 55);
             pnlCourse.TabIndex = 5;
-            pnlCourse.Click += this.Courses_Click;
+            pnlCourse.Click += Courses_Click;
             // 
             // lblCourse
             // 
@@ -196,7 +147,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             lblCourse.Size = new Size(165, 23);
             lblCourse.TabIndex = 1;
             lblCourse.Text = "Danh sách khóa học";
-            lblCourse.Click += this.Courses_Click;
+            lblCourse.Click += Courses_Click;
             // 
             // picCourse
             // 
@@ -207,18 +158,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             picCourse.SizeMode = PictureBoxSizeMode.Zoom;
             picCourse.TabIndex = 0;
             picCourse.TabStop = false;
-            picCourse.Click += this.Courses_Click;
-            // 
-            // lblShortcuts
-            // 
-            lblShortcuts.AutoSize = true;
-            lblShortcuts.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblShortcuts.ForeColor = Color.Gray;
-            lblShortcuts.Location = new Point(10, 372);
-            lblShortcuts.Name = "lblShortcuts";
-            lblShortcuts.Size = new Size(112, 20);
-            lblShortcuts.TabIndex = 4;
-            lblShortcuts.Text = "Lối tắt của bạn";
+            picCourse.Click += Courses_Click;
             // 
             // pnlStudentList
             // 
@@ -381,13 +321,9 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             Text = "Tennis Social Network";
             WindowState = FormWindowState.Maximized;
             sidebarPanel.ResumeLayout(false);
-            sidebarPanel.PerformLayout();
             pnlManagement.ResumeLayout(false);
             pnlManagement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picManagement).EndInit();
-            pnlInvoice.ResumeLayout(false);
-            pnlInvoice.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picInvoice).EndInit();
             pnlCourse.ResumeLayout(false);
             pnlCourse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picCourse).EndInit();

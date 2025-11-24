@@ -15,7 +15,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.ProfileUI
     public partial class UserProfile : UserControl
     {
         private readonly ServiceHub _serviceHub;
-        private readonly int _id;
+        private readonly string _email;
 
         private bool isEditMode = false;
         private bool isDarkMode = false;
@@ -25,11 +25,11 @@ namespace BaiTapLon_WinFormApp.Views.Admin.ProfileUI
         private Color darkPanelColor = Color.FromArgb(48, 48, 48);
         private Color lightTextColor = Color.FromArgb(66, 66, 66);
         private Color darkTextColor = Color.FromArgb(220, 220, 220);
-        public UserProfile(ServiceHub serviceHub, int id)
+        public UserProfile(ServiceHub serviceHub, string email)
         {
             InitializeComponent();
             _serviceHub = serviceHub;
-            _id = id;
+            _email = email;
             LoadSampleData();
             InitializeSettings();
         }
@@ -295,15 +295,34 @@ namespace BaiTapLon_WinFormApp.Views.Admin.ProfileUI
         // Load dữ liệu mẫu
         private void LoadSampleData()
         {
-            txtFullName.Text = "Nguyễn Văn An";
-            lblUserName.Text = "Nguyễn Văn An";
-            lblRole.Text = "Quản trị viên";
-            dateTimePickerBirthday.Value = new DateTime(1990, 5, 15);
-            txtAddress.Text = "123 Đường Lê Lợi, Quận 1, TP. Hồ Chí Minh";
-            txtPhone.Text = "0901 234 567";
-            txtEmail.Text = "nguyenvanan@email.com";
+            var admin = _serviceHub.AdminService.getAdminByEmail(_email);
+            
+            if(admin == null)
+            {
+                txtFullName.Text = "Lê Quốc Trung";
+                lblUserName.Text = "Nguyễn Văn An";
+                lblRole.Text = "Quản trị viên";
+                dateTimePickerBirthday.Value = new DateTime(2005, 05, 05);
+                txtAddress.Text = "123 Đường Lê Lợi, Quận 1, TP. Hồ Chí Minh";
+                txtPhone.Text = "0901 234 567";
+                txtEmail.Text = "nguyenvanan@email.com";
+                UpdateAvatar();
 
-            UpdateAvatar();
+            }
+            else
+            {
+
+                txtFullName.Text = admin.FullName;
+                lblUserName.Text = admin.UserName;
+                lblRole.Text = "Quản trị viên";
+                dateTimePickerBirthday.Value = new DateTime(2005, 05, 05);
+                txtAddress.Text = admin.Address;
+                txtPhone.Text = admin.PhoneNumber;
+                txtEmail.Text = admin.Email;
+                UpdateAvatar();
+
+            }
+
         }
 
         // Khởi tạo settings

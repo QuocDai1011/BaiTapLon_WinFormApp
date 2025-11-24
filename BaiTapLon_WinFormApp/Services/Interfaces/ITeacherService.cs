@@ -11,5 +11,7 @@ namespace BaiTapLon_WinFormApp.Services.Interfaces
     {
         Teacher GetTeacherById(int id);
         int UpdateProfile(int id, Teacher teacherUpdated);
+
+        Teacher? getTeacherByEmai(string email);
     }
 }

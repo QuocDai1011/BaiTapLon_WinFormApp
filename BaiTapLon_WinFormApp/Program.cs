@@ -42,31 +42,34 @@ namespace BaiTapLon_WinFormApp
             services.AddSingleton<IClassRepository, ClassRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<ITeacherRepository, TeacherRepository>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
 
             //Đăng ký các service cho Service ở đây
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddSingleton<IClassService, ClassService>();
             services.AddScoped<ICourseService, CourseService>();
+            services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<ITeacherService, TeacherService>();
 
-            services.AddScoped<ServiceHub>();
+            //services.AddScoped<ServiceHub>();
 
             //Dăng ký ServiceHub
             services.AddScoped<ServiceHub>();
 
             // 4. Đăng ký Form cần dùng DI
             services.AddTransient<Form1>();
-            int teacherId = 1; // hoặc lấy từ Login
-            services.AddTransient<TeacherMainForm>(provider =>
-            {
-                return new TeacherMainForm(
-                    provider.GetRequiredService<ServiceHub>(),
-                    teacherId
-                );
-            });
+            //int teacherId = 1; // hoặc lấy từ Login
+            //services.AddTransient<TeacherMainForm>(provider =>
+            //{
+            //    return new TeacherMainForm(
+            //        provider.GetRequiredService<ServiceHub>(),
+            //        teacherId
+            //    );
+            //});
             services.AddTransient<LoginForm>();
             services.AddTransient<HomePage>();
+            services.AddTransient<TeacherMainForm>();
             // 5. Build provider
             var provider = services.BuildServiceProvider();
 

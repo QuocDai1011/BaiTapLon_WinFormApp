@@ -269,7 +269,6 @@ namespace BaiTapLon_WinFormApp.Views.Admin.StudentUI
                         IsActive = worksheet.Cells[row, 10].Text.Trim() == "1"
                     };
 
-                    MessageHelper.ShowInfo("Thông tin:" + student);
 
                     // Thêm vào database
                     string message = _service.StudentService.createStudent(student);

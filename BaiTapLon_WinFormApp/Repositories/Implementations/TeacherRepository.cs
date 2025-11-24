@@ -17,6 +17,18 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             _context = context;
         }
 
+        public Teacher? getTeacherByEmail(string email)
+        {
+            try
+            {
+                return _context.Teachers.FirstOrDefault(t => t.Email == email);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public Teacher GetTeacherById(int id)
         {
             var teacher = _context.Teachers.Find(id);

@@ -2,7 +2,9 @@
 using BaiTapLon_WinFormApp.Services;
 using BaiTapLon_WinFormApp.Services.Implementations;
 using BaiTapLon_WinFormApp.Utils;
+using BaiTapLon_WinFormApp.Views.Admin.HomePageUI;
 using BaiTapLon_WinFormApp.Views.SystemAcess.Pages.ForgetForm;
+using BaiTapLon_WinFormApp.Views.Teacher;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,12 +31,12 @@ namespace BaiTapLon_WinFormApp.Views.SystemAcess.Login
             _serviceHub = serviceHub;
             InitializeComponent();
         }
-        private bool CheckLogin(string email, string password)
+        private (bool isSucces, string? userRole) CheckLogin(string email, string password)
         {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Vui lòng nhập email và mật khẩu!");
-                return false;
+                return (false, null);
             }
             string userRole;
             var isLogin = _serviceHub.AuthService.Login(email, password, out userRole);
@@ -42,19 +44,61 @@ namespace BaiTapLon_WinFormApp.Views.SystemAcess.Login
             if (isLogin == false)
             {
                 MessageBox.Show("Email không tồn tại trong hệ thống hoặc sai mật khẩu!");
-                return false;
+                return (false, null);
             }
             else
             {
-                MessageBox.Show($"Đăng nhập thành công! (Vai trò: {userRole})");
-                return true;
+                MessageBox.Show($"Đăng nhập thành công!");
+                return (true, userRole);
             }
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txbEmailLogin.Text.Trim();
             string password = txbPassLogin.Text.Trim();
-            bool check = CheckLogin(username, password);
+            var check = CheckLogin(username, password);
+            if (check.isSucces)
+            {
+                switch (check.userRole)
+                {
+                    case "admins":
+                        {
+                            var admin = _serviceHub.AdminService.getAdminByEmail(username);
+                            if (admin == null)
+                            {
+                                MessageHelper.ShowError($"Đã có lỗi khi lấy thông tin giảng viên \n có email {username}");
+                                return;
+                            }
+                            new HomePage(_serviceHub, username).ShowDialog();
+                            this.Close();
+                            break;
+                        }
+                    case "teachers":
+                        {
+                            var teacher = _serviceHub.TeacherService.getTeacherByEmai(username);
+                            if(teacher == null)
+                            {
+                                MessageHelper.ShowError($"Đã có lỗi khi lấy thông tin giảng viên \n có email {username}");
+                                return;
+                            }
+                            new TeacherMainForm(_serviceHub, teacher.AdminId).ShowDialog();
+                            this.Close();
+                            break;
+                        }
+                    case "students":
+                        {
+                            var teacher = _serviceHub.TeacherService.getTeacherByEmai(username);
+                            if (teacher == null)
+                            {
+                                MessageHelper.ShowError($"Đã có lỗi khi lấy thông tin giảng viên \n có email {username}");
+                                return;
+                            }
+                            new TeacherMainForm(_serviceHub, teacher.AdminId).ShowDialog();
+                            this.Close();
+                            break;
+                        }
+                }
+            }
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)

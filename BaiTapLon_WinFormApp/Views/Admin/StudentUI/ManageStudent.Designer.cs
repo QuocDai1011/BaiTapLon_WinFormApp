@@ -28,9 +28,9 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelHeader = new Panel();
             lblTitle = new Label();
             lblTotalStudents = new Label();
@@ -156,7 +156,7 @@
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(1174, 17);
+            btnRefresh.Location = new Point(1080, 18);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(120, 38);
             btnRefresh.TabIndex = 4;
@@ -171,9 +171,9 @@
             btnAddByExcel.FlatStyle = FlatStyle.Flat;
             btnAddByExcel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnAddByExcel.ForeColor = Color.White;
-            btnAddByExcel.Location = new Point(1309, 17);
+            btnAddByExcel.Location = new Point(1227, 18);
             btnAddByExcel.Name = "btnAddByExcel";
-            btnAddByExcel.Size = new Size(140, 38);
+            btnAddByExcel.Size = new Size(204, 38);
             btnAddByExcel.TabIndex = 5;
             btnAddByExcel.Text = "📥 Thêm bằng Excel";
             btnAddByExcel.UseVisualStyleBackColor = false;
@@ -183,29 +183,29 @@
             // 
             dgvStudents.AllowUserToAddRows = false;
             dgvStudents.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(245, 245, 245);
-            dgvStudents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(245, 245, 245);
+            dgvStudents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStudents.BackgroundColor = Color.White;
             dgvStudents.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(33, 150, 243);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(5);
-            dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(33, 150, 243);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.Padding = new Padding(5);
+            dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvStudents.ColumnHeadersHeight = 50;
             dgvStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvStudents.Columns.AddRange(new DataGridViewColumn[] { colSTT, colId, colFullName, colGender, colEmail, colDateOfBirth, colPhoneNumber, colPhoneNumberOfParent });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(33, 33, 33);
-            dataGridViewCellStyle6.Padding = new Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(232, 234, 246);
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvStudents.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(33, 33, 33);
+            dataGridViewCellStyle3.Padding = new Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(232, 234, 246);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvStudents.DefaultCellStyle = dataGridViewCellStyle3;
             dgvStudents.Dock = DockStyle.Fill;
             dgvStudents.EnableHeadersVisualStyles = false;
             dgvStudents.GridColor = Color.LightGray;

@@ -18,5 +18,6 @@ namespace BaiTapLon_WinFormApp.Services.Interfaces
 
         Student? GetStudentById(int studentId);
 
+        Student? getStudentByEmail(string email);
     }
 }

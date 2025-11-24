@@ -17,5 +17,8 @@ namespace BaiTapLon_WinFormApp.Repositories.Interfaces
         string deleteStudent(int studentId);
 
         Student? getById(int studentId);
+
+        Student? getStudentByEmail(string email);
+
     }
 }

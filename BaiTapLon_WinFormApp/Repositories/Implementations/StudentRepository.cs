@@ -125,6 +125,19 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
 
         }
 
+        public Student? getStudentByEmail(string email)
+        {
+            try
+            {
+                return _context.Students.Find(email);
+
+            }catch(Exception sqlEx)
+            {
+                return null;
+            }
+
+        }
+
         public string updateStudent(Student student)
         {
 

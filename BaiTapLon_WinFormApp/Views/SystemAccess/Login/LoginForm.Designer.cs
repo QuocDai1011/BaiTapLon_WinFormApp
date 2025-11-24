@@ -182,7 +182,7 @@
             pnBackgroundLogin.Margin = new Padding(3, 4, 3, 4);
             pnBackgroundLogin.Name = "pnBackgroundLogin";
             pnBackgroundLogin.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            pnBackgroundLogin.Size = new Size(1109, 1093);
+            pnBackgroundLogin.Size = new Size(1109, 1048);
             pnBackgroundLogin.TabIndex = 1;
             // 
             // guna2Panel3
@@ -1190,7 +1190,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1112, 1100);
+            ClientSize = new Size(1112, 1055);
             Controls.Add(pnBackgroundLogin);
             Controls.Add(pnBackgroundRegister);
             Margin = new Padding(3, 4, 3, 4);

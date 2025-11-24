@@ -21,10 +21,12 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
     {
 
         private readonly ServiceHub _serviceHub;
-        public HomePage(ServiceHub serviceHub)
+        private readonly string  _email;
+        public HomePage(ServiceHub serviceHub, string email)
         {
             InitializeComponent();
             _serviceHub = serviceHub;
+            _email = email;
             _serviceHub.ClassService.RunAutoUpdate();
             loadDashBoardView();
         }
@@ -58,7 +60,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
         {
             pnlManagement.BackColor = Color.White;
             pnlMyClass.BackColor = Color.White;
-            pnlInvoice.BackColor = Color.White;
+            //pnlInvoice.BackColor = Color.White;
             pnlDashboard.BackColor = Color.White;
             pnlCourse.BackColor = Color.White;
             pnlStudentList.BackColor = Color.White;
@@ -70,7 +72,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
             resetFeatureClicked();
             pnlManagement.BackColor = Color.FromArgb(240, 245, 255);
             contentPanel.Controls.Clear();
-            var manageView = new UserProfile(_serviceHub, 1);
+            var manageView = new UserProfile(_serviceHub, _email);
             contentPanel.Controls.Add(manageView);
 
         }
@@ -96,11 +98,11 @@ namespace BaiTapLon_WinFormApp.Views.Admin.HomePageUI
 
         }
 
-        private void invoice_Click(object sender, EventArgs e)
-        {
-            resetFeatureClicked();
-            pnlInvoice.BackColor = Color.FromArgb(240, 245, 255);
-        }
+        //private void invoice_Click(object sender, EventArgs e)
+        //{
+        //    resetFeatureClicked();
+        //    pnlInvoice.BackColor = Color.FromArgb(240, 245, 255);
+        //}
         private void Courses_Click(object sender, EventArgs e)
         {
             resetFeatureClicked();

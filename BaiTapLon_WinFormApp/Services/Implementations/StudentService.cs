@@ -27,6 +27,9 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                 if (errors.Any())
                     return string.Join("\n", errors);
 
+                //hash password bằng bcrypt trước khi thêm vào DB
+                student.Password = BCrypt.Net.BCrypt.HashPassword(student.Password);
+
                 // Thêm học sinh vào DB
                 var repoResult = _studentRepository.createStudent(student);
                 // Repository returns empty string on success, or an error message
@@ -68,6 +71,19 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
             catch (Exception ex)
             {
                 return new List<Student>();
+            }
+        }
+
+        public Student? getStudentByEmail(string email)
+        {
+            try
+            {
+
+                return _studentRepository.getStudentByEmail(email);
+
+            }catch(Exception ex)
+            {
+                return null;
             }
         }
 
