@@ -11,9 +11,11 @@ namespace EnglishCenterManagement.UI.Views
     {
         private readonly IStudentService _studentService;
         private readonly EnglishCenterDbContext _context;
-        public StudentFrom()
+        private int _studentId;
+        public StudentFrom(int studentId)
         {
             InitializeComponent();
+            _studentId = studentId;
             _context = new EnglishCenterDbContext(); // gán cho biến thành viên
             var studentRepo = new StudentRepository(_context);
             _studentService = new StudentService(studentRepo, _context);
@@ -168,19 +170,19 @@ namespace EnglishCenterManagement.UI.Views
                 {
                     Icon = Image.FromFile(GetAsset("user.png")),
                     Text = "User",
-                    OnClick = () => RenderDetailStudent(15)
+                    OnClick = () => RenderDetailStudent(_studentId)
                 },
                 new SidebarItem()
                 {
                     Icon = Image.FromFile(GetAsset("store.png")),
                     Text = "Marketplace",
-                    OnClick = () => renderCourse(15)
+                    OnClick = () => renderCourse(_studentId)
                 },
                 new SidebarItem()
                 {
                     Icon = Image.FromFile(GetAsset("classroom.png")),
                     Text = "Lớp học của tôi",
-                    OnClick = () => RenderRegisteredClasses(15)
+                    OnClick = () => RenderRegisteredClasses(_studentId)
                 },
                 new SidebarItem()
                 {

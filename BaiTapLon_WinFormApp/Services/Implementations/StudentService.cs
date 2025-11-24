@@ -1,7 +1,7 @@
 ﻿using BaiTapLon_WinFormApp.Models;
 using BaiTapLon_WinFormApp.Repositories.Interfaces;
 using BaiTapLon_WinFormApp.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
+using BaiTapLon_WinFormApp.Utils;
 
 namespace BaiTapLon_WinFormApp.Services.Implementations
 {
@@ -85,20 +85,102 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
             return _repo.GetAvailableCourse(studentId);
         }
 
+        private readonly IStudentRepository _studentRepository;
+        public StudentService(IStudentRepository studentRepository)
+        {
+            _studentRepository = studentRepository;
+
+        }
+
+        public string createStudent(Student student)
+        {
+            try
+            {
+                var errors = Validator.ValidateStudent(student);
+                if (errors.Any())
+                    return string.Join("\n", errors);
+
+                // Thêm học sinh vào DB
+                var repoResult = _studentRepository.createStudent(student);
+                // Repository returns empty string on success, or an error message
+                return string.IsNullOrEmpty(repoResult) ? null : repoResult;
+            }
+            catch (Exception ex)
+            {
+                return "Hệ thống gặp sự cố. Vui lòng liên hệ quản trị viên";
+            }
+        }
+
+        public string deleteStudent(int studentId)
+        {
+
+            string errorMessage = "";
+            Student? student = GetStudentById(studentId);
+            if (student != null)
+            {
+                try
+                {
+                    errorMessage = _studentRepository.deleteStudent(studentId);
+                    if (string.IsNullOrEmpty(errorMessage))
+                        errorMessage = "Xóa học sinh thành công.";
+                }
+                catch (Exception ex)
+                {
+                    errorMessage = "Hệ thống gặp sự cố. Vui lòng liên hệ quản trị viên";
+                }
+            }
+            return errorMessage;
+        }
+
+        public List<Student> getAllStudent()
+        {
+            try
+            {
+                return _studentRepository.getAllStudent();
+            }
+            catch (Exception ex)
+            {
+                return new List<Student>();
+            }
+        }
+
+        public Student? GetStudentById(int studentId)
+        {
+            
+            try
+            {
+                return _studentRepository.getById(studentId);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public string updateStudent(Student student)
+        {
+            try
+            {
+                var errors = Validator.ValidateStudent(student);
+                if (errors.Any())
+                    return string.Join("\n", errors);
+                // Cập nhật học sinh trong DB
+                var repoResult = _studentRepository.updateStudent(student);
+                return string.IsNullOrEmpty(repoResult) ? null : repoResult;
+            }
+            catch (Exception ex)
+            {
+                return "Hệ thống gặp sự cố. Vui lòng liên hệ quản trị viên";
+            }
+        }
+
         public List<Class> GetRegisteredCourses(int studentId)
         {
             var registerCourses = _repo.GetById(studentId);
             if (registerCourses == null) throw new Exception("không tìm thấy sinh viên");
 
             return _repo.GetRegisterCourse(studentId);
-        }
-
-        public Student GetStudentById(int studentId)
-        {
-            var student = _repo.GetById(studentId);
-            if (student == null) throw new Exception("Không tìm thấy sinh viên");
-
-            return student;
         }
         public bool UpdateStudent(int studentId, Student student)
         {

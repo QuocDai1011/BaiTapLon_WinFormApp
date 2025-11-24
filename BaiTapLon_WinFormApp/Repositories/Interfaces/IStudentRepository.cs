@@ -19,5 +19,13 @@ namespace BaiTapLon_WinFormApp.Repositories.Interfaces
         void UpdateReceipt(Receipt receipt);
         List<Course> GetAllCourse();
         void AddStudentToClass(int studentId, int courseId);
+        List<Student> getAllStudent();
+        string createStudent(Student student);
+
+        string updateStudent(Student student);
+
+        string deleteStudent(int studentId);
+
+        Student? getById(int studentId);
     }
 }
