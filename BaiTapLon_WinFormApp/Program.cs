@@ -73,13 +73,14 @@ namespace BaiTapLon_WinFormApp
             });
             services.AddTransient<LoginForm>();
             services.AddTransient<HomePage>();
+            services.AddTransient<StudentFrom>();
 
             // 5. Build provider
             var provider = services.BuildServiceProvider();
 
             // 6. Chạy WinForms
             ApplicationConfiguration.Initialize();
-            Application.Run(provider.GetRequiredService<LoginForm>());
+            Application.Run(provider.GetRequiredService<StudentFrom>());
 
         }
     }

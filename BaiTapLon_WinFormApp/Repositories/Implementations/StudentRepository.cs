@@ -57,12 +57,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
                 .Where(c => !registerCourses.Contains(c.CourseId))
                 .ToList();
         }
-
-        public Student GetById(int studentId)
-        {
-            return _context.Students.FirstOrDefault(c => c.StudentId == studentId);
-        }
-
         public List<Class> GetRegisterCourse(int studentId)
         {
             return _context.Students
@@ -226,7 +220,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
 
         public Student? getById(int studentId)
         {
-
             try
             {
                 return _context.Students.Find(studentId);

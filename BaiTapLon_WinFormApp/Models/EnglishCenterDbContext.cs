@@ -6,10 +6,6 @@ namespace BaiTapLon_WinFormApp.Models;
 
 public partial class EnglishCenterDbContext : DbContext
 {
-    public EnglishCenterDbContext()
-    {
-    }
-
     public EnglishCenterDbContext(DbContextOptions<EnglishCenterDbContext> options)
         : base(options)
     {

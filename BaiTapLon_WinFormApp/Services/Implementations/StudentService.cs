@@ -12,8 +12,8 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public StudentService(IStudentRepository repo, EnglishCenterDbContext context)
         {
-            _repo = repo;
-            _context = context;
+            _repo = repo ?? throw new ArgumentNullException(nameof(repo));
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
 
@@ -79,17 +79,10 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public List<Course> GetAvailableCourses(int studentId)
         {
-            var student = _repo.GetById(studentId);
+            var student = _repo.getById(studentId);
             if (student == null) throw new Exception("Không tìm thấy sinh viên");
 
             return _repo.GetAvailableCourse(studentId);
-        }
-
-        private readonly IStudentRepository _studentRepository;
-        public StudentService(IStudentRepository studentRepository)
-        {
-            _studentRepository = studentRepository;
-
         }
 
         public string createStudent(Student student)
@@ -101,7 +94,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                     return string.Join("\n", errors);
 
                 // Thêm học sinh vào DB
-                var repoResult = _studentRepository.createStudent(student);
+                var repoResult = _repo.createStudent(student);
                 // Repository returns empty string on success, or an error message
                 return string.IsNullOrEmpty(repoResult) ? null : repoResult;
             }
@@ -120,7 +113,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
             {
                 try
                 {
-                    errorMessage = _studentRepository.deleteStudent(studentId);
+                    errorMessage = _repo.deleteStudent(studentId);
                     if (string.IsNullOrEmpty(errorMessage))
                         errorMessage = "Xóa học sinh thành công.";
                 }
@@ -136,7 +129,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
         {
             try
             {
-                return _studentRepository.getAllStudent();
+                return _repo.getAllStudent();
             }
             catch (Exception ex)
             {
@@ -145,11 +138,10 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
         }
 
         public Student? GetStudentById(int studentId)
-        {
-            
+        {            
             try
             {
-                return _studentRepository.getById(studentId);
+                return _repo.getById(studentId);
             }
             catch (Exception ex)
             {
@@ -166,7 +158,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                 if (errors.Any())
                     return string.Join("\n", errors);
                 // Cập nhật học sinh trong DB
-                var repoResult = _studentRepository.updateStudent(student);
+                var repoResult = _repo.updateStudent(student);
                 return string.IsNullOrEmpty(repoResult) ? null : repoResult;
             }
             catch (Exception ex)
@@ -177,7 +169,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public List<Class> GetRegisteredCourses(int studentId)
         {
-            var registerCourses = _repo.GetById(studentId);
+            var registerCourses = _repo.getById(studentId);
             if (registerCourses == null) throw new Exception("không tìm thấy sinh viên");
 
             return _repo.GetRegisterCourse(studentId);

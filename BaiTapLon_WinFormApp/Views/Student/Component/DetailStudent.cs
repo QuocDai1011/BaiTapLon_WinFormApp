@@ -1,5 +1,4 @@
 ﻿using BaiTapLon_WinFormApp.Services.Interfaces;
-using BaiTapLon_WinFormApp.Models;
 
 namespace EnglishCenterManagement.UI.Views.Student.Component
 {
@@ -16,7 +15,7 @@ namespace EnglishCenterManagement.UI.Views.Student.Component
         public void LoadDetailStudent(int studentId)
         {
             _currentStudentId = studentId;
-            var student = _context.GetStudentById(studentId);
+            var student = _context.GetStudentById(_currentStudentId);
             if (student == null)
             {
                 MessageBox.Show("Không tìm thấy sinh viên");

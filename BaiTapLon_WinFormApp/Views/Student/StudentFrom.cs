@@ -10,15 +10,12 @@ namespace EnglishCenterManagement.UI.Views
     public partial class StudentFrom : Form
     {
         private readonly IStudentService _studentService;
-        private readonly EnglishCenterDbContext _context;
-        private int _studentId;
-        public StudentFrom(int studentId)
+
+        public StudentFrom(IStudentService studentService)
         {
             InitializeComponent();
-            _studentId = studentId;
-            _context = new EnglishCenterDbContext(); // gán cho biến thành viên
-            var studentRepo = new StudentRepository(_context);
-            _studentService = new StudentService(studentRepo, _context);
+
+            _studentService = studentService;
 
             RenderActions();
             RenderRightActions();
@@ -170,19 +167,19 @@ namespace EnglishCenterManagement.UI.Views
                 {
                     Icon = Image.FromFile(GetAsset("user.png")),
                     Text = "User",
-                    OnClick = () => RenderDetailStudent(_studentId)
+                    OnClick = () => RenderDetailStudent(15)
                 },
                 new SidebarItem()
                 {
                     Icon = Image.FromFile(GetAsset("store.png")),
                     Text = "Marketplace",
-                    OnClick = () => renderCourse(_studentId)
+                    OnClick = () => renderCourse(15)
                 },
                 new SidebarItem()
                 {
                     Icon = Image.FromFile(GetAsset("classroom.png")),
                     Text = "Lớp học của tôi",
-                    OnClick = () => RenderRegisteredClasses(_studentId)
+                    OnClick = () => RenderRegisteredClasses(15)
                 },
                 new SidebarItem()
                 {
@@ -309,7 +306,7 @@ namespace EnglishCenterManagement.UI.Views
 
             foreach (var c in courses)
             {
-                var item = new UC_Course(studentId, _studentService, _context);
+                var item = new UC_Course(studentId, _studentService);
 
                 item.LoadCourse(c);
 
