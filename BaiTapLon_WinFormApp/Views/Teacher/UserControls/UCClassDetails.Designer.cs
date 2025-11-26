@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnContent = new FlowLayoutPanel();
             lblHeadingClassDetail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -111,7 +111,7 @@
             pnContent.FlowDirection = FlowDirection.TopDown;
             pnContent.Location = new Point(0, 0);
             pnContent.Name = "pnContent";
-            pnContent.Padding = new Padding(50, 10, 50, 10);
+            pnContent.Padding = new Padding(50, 11, 50, 11);
             pnContent.Size = new Size(2216, 1335);
             pnContent.TabIndex = 3;
             // 
@@ -121,24 +121,25 @@
             lblHeadingClassDetail.BorderStyle = BorderStyle.FixedSingle;
             lblHeadingClassDetail.Font = new Font("Verdana", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblHeadingClassDetail.ForeColor = Color.White;
-            lblHeadingClassDetail.Location = new Point(930, 60);
-            lblHeadingClassDetail.Margin = new Padding(880, 50, 3, 3);
+            lblHeadingClassDetail.Location = new Point(650, 62);
+            lblHeadingClassDetail.Margin = new Padding(600, 51, 3, 3);
             lblHeadingClassDetail.Name = "lblHeadingClassDetail";
-            lblHeadingClassDetail.Padding = new Padding(20);
-            lblHeadingClassDetail.Size = new Size(463, 80);
+            lblHeadingClassDetail.Padding = new Padding(21, 20, 21, 20);
+            lblHeadingClassDetail.Size = new Size(465, 80);
             lblHeadingClassDetail.TabIndex = 0;
             lblHeadingClassDetail.Text = "Thông tin chi tiết lớp học";
             lblHeadingClassDetail.TextAlignment = ContentAlignment.MiddleCenter;
+            lblHeadingClassDetail.Click += lblHeadingClassDetail_Click;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(flowLayoutPanel2);
             flowLayoutPanel1.Controls.Add(flowLayoutPanel3);
             flowLayoutPanel1.Controls.Add(btnBack);
-            flowLayoutPanel1.Location = new Point(53, 163);
+            flowLayoutPanel1.Location = new Point(53, 165);
             flowLayoutPanel1.Margin = new Padding(3, 20, 3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(2111, 1096);
+            flowLayoutPanel1.Size = new Size(1300, 1096);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // flowLayoutPanel2
@@ -154,18 +155,18 @@
             flowLayoutPanel2.Location = new Point(3, 3);
             flowLayoutPanel2.Margin = new Padding(3, 3, 10, 3);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Padding = new Padding(20);
-            flowLayoutPanel2.Size = new Size(1045, 675);
+            flowLayoutPanel2.Padding = new Padding(21, 20, 21, 20);
+            flowLayoutPanel2.Size = new Size(650, 675);
             flowLayoutPanel2.TabIndex = 0;
             // 
             // flowLayoutPanel4
             // 
             flowLayoutPanel4.Controls.Add(lblCourseCode);
             flowLayoutPanel4.Controls.Add(lblCourseCodeValue);
-            flowLayoutPanel4.Location = new Point(23, 23);
+            flowLayoutPanel4.Location = new Point(24, 23);
             flowLayoutPanel4.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel4.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel4.Size = new Size(1000, 35);
             flowLayoutPanel4.TabIndex = 0;
             // 
@@ -173,7 +174,7 @@
             // 
             lblCourseCode.BackColor = Color.Transparent;
             lblCourseCode.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCourseCode.Location = new Point(103, 3);
+            lblCourseCode.Location = new Point(104, 3);
             lblCourseCode.Margin = new Padding(3, 3, 30, 3);
             lblCourseCode.Name = "lblCourseCode";
             lblCourseCode.Size = new Size(164, 33);
@@ -184,7 +185,7 @@
             // 
             lblCourseCodeValue.BackColor = Color.Transparent;
             lblCourseCodeValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCourseCodeValue.Location = new Point(300, 3);
+            lblCourseCodeValue.Location = new Point(301, 3);
             lblCourseCodeValue.Name = "lblCourseCodeValue";
             lblCourseCodeValue.Size = new Size(146, 34);
             lblCourseCodeValue.TabIndex = 1;
@@ -194,10 +195,10 @@
             // 
             flowLayoutPanel5.Controls.Add(lblCourseName);
             flowLayoutPanel5.Controls.Add(lblCourseNameValue);
-            flowLayoutPanel5.Location = new Point(23, 81);
+            flowLayoutPanel5.Location = new Point(24, 81);
             flowLayoutPanel5.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel5.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel5.Size = new Size(1000, 35);
             flowLayoutPanel5.TabIndex = 2;
             // 
@@ -205,7 +206,7 @@
             // 
             lblCourseName.BackColor = Color.Transparent;
             lblCourseName.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCourseName.Location = new Point(103, 3);
+            lblCourseName.Location = new Point(104, 3);
             lblCourseName.Margin = new Padding(3, 3, 30, 3);
             lblCourseName.Name = "lblCourseName";
             lblCourseName.Size = new Size(170, 33);
@@ -216,7 +217,7 @@
             // 
             lblCourseNameValue.BackColor = Color.Transparent;
             lblCourseNameValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCourseNameValue.Location = new Point(306, 3);
+            lblCourseNameValue.Location = new Point(307, 3);
             lblCourseNameValue.Name = "lblCourseNameValue";
             lblCourseNameValue.Size = new Size(385, 34);
             lblCourseNameValue.TabIndex = 1;
@@ -226,10 +227,10 @@
             // 
             flowLayoutPanel6.Controls.Add(lblNumberSession);
             flowLayoutPanel6.Controls.Add(lblNumberSessionValue);
-            flowLayoutPanel6.Location = new Point(23, 139);
+            flowLayoutPanel6.Location = new Point(24, 139);
             flowLayoutPanel6.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
-            flowLayoutPanel6.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel6.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel6.Size = new Size(1000, 35);
             flowLayoutPanel6.TabIndex = 3;
             // 
@@ -237,7 +238,7 @@
             // 
             lblNumberSession.BackColor = Color.Transparent;
             lblNumberSession.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNumberSession.Location = new Point(103, 3);
+            lblNumberSession.Location = new Point(104, 3);
             lblNumberSession.Margin = new Padding(3, 3, 30, 3);
             lblNumberSession.Name = "lblNumberSession";
             lblNumberSession.Size = new Size(202, 33);
@@ -248,7 +249,7 @@
             // 
             lblNumberSessionValue.BackColor = Color.Transparent;
             lblNumberSessionValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNumberSessionValue.Location = new Point(338, 3);
+            lblNumberSessionValue.Location = new Point(339, 3);
             lblNumberSessionValue.Name = "lblNumberSessionValue";
             lblNumberSessionValue.Size = new Size(33, 34);
             lblNumberSessionValue.TabIndex = 1;
@@ -258,10 +259,10 @@
             // 
             flowLayoutPanel7.Controls.Add(lblLevel);
             flowLayoutPanel7.Controls.Add(lblLevelValue);
-            flowLayoutPanel7.Location = new Point(23, 197);
+            flowLayoutPanel7.Location = new Point(24, 197);
             flowLayoutPanel7.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel7.Name = "flowLayoutPanel7";
-            flowLayoutPanel7.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel7.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel7.Size = new Size(1000, 35);
             flowLayoutPanel7.TabIndex = 4;
             // 
@@ -269,7 +270,7 @@
             // 
             lblLevel.BackColor = Color.Transparent;
             lblLevel.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLevel.Location = new Point(103, 3);
+            lblLevel.Location = new Point(104, 3);
             lblLevel.Margin = new Padding(3, 3, 30, 3);
             lblLevel.Name = "lblLevel";
             lblLevel.Size = new Size(197, 33);
@@ -280,7 +281,7 @@
             // 
             lblLevelValue.BackColor = Color.Transparent;
             lblLevelValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLevelValue.Location = new Point(333, 3);
+            lblLevelValue.Location = new Point(334, 3);
             lblLevelValue.Name = "lblLevelValue";
             lblLevelValue.Size = new Size(36, 34);
             lblLevelValue.TabIndex = 1;
@@ -290,10 +291,10 @@
             // 
             flowLayoutPanel8.Controls.Add(lblCreateAt);
             flowLayoutPanel8.Controls.Add(lblCreateAtValue);
-            flowLayoutPanel8.Location = new Point(23, 255);
+            flowLayoutPanel8.Location = new Point(24, 255);
             flowLayoutPanel8.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
-            flowLayoutPanel8.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel8.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel8.Size = new Size(1000, 35);
             flowLayoutPanel8.TabIndex = 5;
             // 
@@ -301,7 +302,7 @@
             // 
             lblCreateAt.BackColor = Color.Transparent;
             lblCreateAt.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCreateAt.Location = new Point(103, 3);
+            lblCreateAt.Location = new Point(104, 3);
             lblCreateAt.Margin = new Padding(3, 3, 30, 3);
             lblCreateAt.Name = "lblCreateAt";
             lblCreateAt.Size = new Size(181, 33);
@@ -312,7 +313,7 @@
             // 
             lblCreateAtValue.BackColor = Color.Transparent;
             lblCreateAtValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCreateAtValue.Location = new Point(317, 3);
+            lblCreateAtValue.Location = new Point(318, 3);
             lblCreateAtValue.Name = "lblCreateAtValue";
             lblCreateAtValue.Size = new Size(139, 34);
             lblCreateAtValue.TabIndex = 1;
@@ -322,10 +323,10 @@
             // 
             flowLayoutPanel9.Controls.Add(lblUpdateAt);
             flowLayoutPanel9.Controls.Add(lblUpdateAtValue);
-            flowLayoutPanel9.Location = new Point(23, 313);
+            flowLayoutPanel9.Location = new Point(24, 313);
             flowLayoutPanel9.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
-            flowLayoutPanel9.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel9.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel9.Size = new Size(1000, 35);
             flowLayoutPanel9.TabIndex = 6;
             // 
@@ -333,7 +334,7 @@
             // 
             lblUpdateAt.BackColor = Color.Transparent;
             lblUpdateAt.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUpdateAt.Location = new Point(103, 3);
+            lblUpdateAt.Location = new Point(104, 3);
             lblUpdateAt.Margin = new Padding(3, 3, 30, 3);
             lblUpdateAt.Name = "lblUpdateAt";
             lblUpdateAt.Size = new Size(183, 33);
@@ -344,7 +345,7 @@
             // 
             lblUpdateAtValue.BackColor = Color.Transparent;
             lblUpdateAtValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUpdateAtValue.Location = new Point(319, 3);
+            lblUpdateAtValue.Location = new Point(320, 3);
             lblUpdateAtValue.Name = "lblUpdateAtValue";
             lblUpdateAtValue.Size = new Size(139, 34);
             lblUpdateAtValue.TabIndex = 1;
@@ -363,20 +364,20 @@
             flowLayoutPanel3.Controls.Add(flowLayoutPanel17);
             flowLayoutPanel3.Controls.Add(flowLayoutPanel18);
             flowLayoutPanel3.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel3.Location = new Point(1061, 3);
+            flowLayoutPanel3.Location = new Point(666, 3);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Padding = new Padding(20);
-            flowLayoutPanel3.Size = new Size(1045, 675);
+            flowLayoutPanel3.Padding = new Padding(21, 20, 21, 20);
+            flowLayoutPanel3.Size = new Size(600, 675);
             flowLayoutPanel3.TabIndex = 1;
             // 
             // flowLayoutPanel10
             // 
             flowLayoutPanel10.Controls.Add(lblClassCode);
             flowLayoutPanel10.Controls.Add(lblClassCodeVaule);
-            flowLayoutPanel10.Location = new Point(23, 23);
+            flowLayoutPanel10.Location = new Point(24, 23);
             flowLayoutPanel10.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel10.Name = "flowLayoutPanel10";
-            flowLayoutPanel10.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel10.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel10.Size = new Size(1000, 35);
             flowLayoutPanel10.TabIndex = 7;
             // 
@@ -384,7 +385,7 @@
             // 
             lblClassCode.BackColor = Color.Transparent;
             lblClassCode.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblClassCode.Location = new Point(103, 3);
+            lblClassCode.Location = new Point(104, 3);
             lblClassCode.Margin = new Padding(3, 3, 30, 3);
             lblClassCode.Name = "lblClassCode";
             lblClassCode.Size = new Size(144, 33);
@@ -395,7 +396,7 @@
             // 
             lblClassCodeVaule.BackColor = Color.Transparent;
             lblClassCodeVaule.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblClassCodeVaule.Location = new Point(280, 3);
+            lblClassCodeVaule.Location = new Point(281, 3);
             lblClassCodeVaule.Name = "lblClassCodeVaule";
             lblClassCodeVaule.Size = new Size(206, 34);
             lblClassCodeVaule.TabIndex = 1;
@@ -405,10 +406,10 @@
             // 
             flowLayoutPanel11.Controls.Add(lblClassName);
             flowLayoutPanel11.Controls.Add(lblClassNameValue);
-            flowLayoutPanel11.Location = new Point(23, 81);
+            flowLayoutPanel11.Location = new Point(24, 81);
             flowLayoutPanel11.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel11.Name = "flowLayoutPanel11";
-            flowLayoutPanel11.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel11.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel11.Size = new Size(1000, 35);
             flowLayoutPanel11.TabIndex = 8;
             // 
@@ -416,7 +417,7 @@
             // 
             lblClassName.BackColor = Color.Transparent;
             lblClassName.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblClassName.Location = new Point(103, 3);
+            lblClassName.Location = new Point(104, 3);
             lblClassName.Margin = new Padding(3, 3, 30, 3);
             lblClassName.Name = "lblClassName";
             lblClassName.Size = new Size(150, 33);
@@ -427,20 +428,21 @@
             // 
             lblClassNameValue.BackColor = Color.Transparent;
             lblClassNameValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblClassNameValue.Location = new Point(286, 3);
+            lblClassNameValue.Location = new Point(287, 3);
             lblClassNameValue.Name = "lblClassNameValue";
             lblClassNameValue.Size = new Size(258, 34);
             lblClassNameValue.TabIndex = 1;
             lblClassNameValue.Text = "TOEIC Cấp tốc 700+";
+            lblClassNameValue.Click += lblClassNameValue_Click;
             // 
             // flowLayoutPanel12
             // 
             flowLayoutPanel12.Controls.Add(lblCurrentStudent);
             flowLayoutPanel12.Controls.Add(lblCurrentStudentValue);
-            flowLayoutPanel12.Location = new Point(23, 139);
+            flowLayoutPanel12.Location = new Point(24, 139);
             flowLayoutPanel12.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel12.Name = "flowLayoutPanel12";
-            flowLayoutPanel12.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel12.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel12.Size = new Size(1000, 35);
             flowLayoutPanel12.TabIndex = 9;
             // 
@@ -448,7 +450,7 @@
             // 
             lblCurrentStudent.BackColor = Color.Transparent;
             lblCurrentStudent.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCurrentStudent.Location = new Point(103, 3);
+            lblCurrentStudent.Location = new Point(104, 3);
             lblCurrentStudent.Margin = new Padding(3, 3, 30, 3);
             lblCurrentStudent.Name = "lblCurrentStudent";
             lblCurrentStudent.Size = new Size(314, 33);
@@ -459,7 +461,7 @@
             // 
             lblCurrentStudentValue.BackColor = Color.Transparent;
             lblCurrentStudentValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCurrentStudentValue.Location = new Point(450, 3);
+            lblCurrentStudentValue.Location = new Point(451, 3);
             lblCurrentStudentValue.Name = "lblCurrentStudentValue";
             lblCurrentStudentValue.Size = new Size(33, 34);
             lblCurrentStudentValue.TabIndex = 1;
@@ -469,10 +471,10 @@
             // 
             flowLayoutPanel13.Controls.Add(lblMaxStudent);
             flowLayoutPanel13.Controls.Add(lblMaxStudentValue);
-            flowLayoutPanel13.Location = new Point(23, 197);
+            flowLayoutPanel13.Location = new Point(24, 197);
             flowLayoutPanel13.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel13.Name = "flowLayoutPanel13";
-            flowLayoutPanel13.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel13.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel13.Size = new Size(1000, 35);
             flowLayoutPanel13.TabIndex = 10;
             // 
@@ -480,7 +482,7 @@
             // 
             lblMaxStudent.BackColor = Color.Transparent;
             lblMaxStudent.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMaxStudent.Location = new Point(103, 3);
+            lblMaxStudent.Location = new Point(104, 3);
             lblMaxStudent.Margin = new Padding(3, 3, 30, 3);
             lblMaxStudent.Name = "lblMaxStudent";
             lblMaxStudent.Size = new Size(293, 33);
@@ -491,7 +493,7 @@
             // 
             lblMaxStudentValue.BackColor = Color.Transparent;
             lblMaxStudentValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMaxStudentValue.Location = new Point(429, 3);
+            lblMaxStudentValue.Location = new Point(430, 3);
             lblMaxStudentValue.Name = "lblMaxStudentValue";
             lblMaxStudentValue.Size = new Size(33, 34);
             lblMaxStudentValue.TabIndex = 1;
@@ -501,10 +503,10 @@
             // 
             flowLayoutPanel14.Controls.Add(lblStartDate);
             flowLayoutPanel14.Controls.Add(lblStartDateValue);
-            flowLayoutPanel14.Location = new Point(23, 255);
+            flowLayoutPanel14.Location = new Point(24, 255);
             flowLayoutPanel14.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel14.Name = "flowLayoutPanel14";
-            flowLayoutPanel14.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel14.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel14.Size = new Size(1000, 35);
             flowLayoutPanel14.TabIndex = 11;
             // 
@@ -512,7 +514,7 @@
             // 
             lblStartDate.BackColor = Color.Transparent;
             lblStartDate.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStartDate.Location = new Point(103, 3);
+            lblStartDate.Location = new Point(104, 3);
             lblStartDate.Margin = new Padding(3, 3, 30, 3);
             lblStartDate.Name = "lblStartDate";
             lblStartDate.Size = new Size(168, 33);
@@ -523,7 +525,7 @@
             // 
             lblStartDateValue.BackColor = Color.Transparent;
             lblStartDateValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStartDateValue.Location = new Point(304, 3);
+            lblStartDateValue.Location = new Point(305, 3);
             lblStartDateValue.Name = "lblStartDateValue";
             lblStartDateValue.Size = new Size(139, 34);
             lblStartDateValue.TabIndex = 1;
@@ -533,10 +535,10 @@
             // 
             flowLayoutPanel15.Controls.Add(lblEndDate);
             flowLayoutPanel15.Controls.Add(lblEndDateValue);
-            flowLayoutPanel15.Location = new Point(23, 313);
+            flowLayoutPanel15.Location = new Point(24, 313);
             flowLayoutPanel15.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel15.Name = "flowLayoutPanel15";
-            flowLayoutPanel15.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel15.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel15.Size = new Size(1000, 35);
             flowLayoutPanel15.TabIndex = 12;
             // 
@@ -544,7 +546,7 @@
             // 
             lblEndDate.BackColor = Color.Transparent;
             lblEndDate.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEndDate.Location = new Point(103, 3);
+            lblEndDate.Location = new Point(104, 3);
             lblEndDate.Margin = new Padding(3, 3, 30, 3);
             lblEndDate.Name = "lblEndDate";
             lblEndDate.Size = new Size(173, 33);
@@ -555,7 +557,7 @@
             // 
             lblEndDateValue.BackColor = Color.Transparent;
             lblEndDateValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEndDateValue.Location = new Point(309, 3);
+            lblEndDateValue.Location = new Point(310, 3);
             lblEndDateValue.Name = "lblEndDateValue";
             lblEndDateValue.Size = new Size(139, 34);
             lblEndDateValue.TabIndex = 1;
@@ -565,10 +567,10 @@
             // 
             flowLayoutPanel16.Controls.Add(lblShift);
             flowLayoutPanel16.Controls.Add(lblShiftValue);
-            flowLayoutPanel16.Location = new Point(23, 371);
+            flowLayoutPanel16.Location = new Point(24, 371);
             flowLayoutPanel16.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel16.Name = "flowLayoutPanel16";
-            flowLayoutPanel16.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel16.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel16.Size = new Size(1000, 35);
             flowLayoutPanel16.TabIndex = 13;
             // 
@@ -576,7 +578,7 @@
             // 
             lblShift.BackColor = Color.Transparent;
             lblShift.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblShift.Location = new Point(103, 3);
+            lblShift.Location = new Point(104, 3);
             lblShift.Margin = new Padding(3, 3, 30, 3);
             lblShift.Name = "lblShift";
             lblShift.Size = new Size(104, 33);
@@ -587,7 +589,7 @@
             // 
             lblShiftValue.BackColor = Color.Transparent;
             lblShiftValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblShiftValue.Location = new Point(240, 3);
+            lblShiftValue.Location = new Point(241, 3);
             lblShiftValue.Name = "lblShiftValue";
             lblShiftValue.Size = new Size(71, 34);
             lblShiftValue.TabIndex = 1;
@@ -597,10 +599,10 @@
             // 
             flowLayoutPanel17.Controls.Add(lblLink);
             flowLayoutPanel17.Controls.Add(lblLinkValue);
-            flowLayoutPanel17.Location = new Point(23, 429);
+            flowLayoutPanel17.Location = new Point(24, 429);
             flowLayoutPanel17.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel17.Name = "flowLayoutPanel17";
-            flowLayoutPanel17.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel17.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel17.Size = new Size(1000, 35);
             flowLayoutPanel17.TabIndex = 14;
             // 
@@ -608,7 +610,7 @@
             // 
             lblLink.BackColor = Color.Transparent;
             lblLink.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLink.Location = new Point(103, 3);
+            lblLink.Location = new Point(104, 3);
             lblLink.Margin = new Padding(3, 3, 30, 3);
             lblLink.Name = "lblLink";
             lblLink.Size = new Size(235, 33);
@@ -619,7 +621,7 @@
             // 
             lblLinkValue.BackColor = Color.Transparent;
             lblLinkValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLinkValue.Location = new Point(371, 3);
+            lblLinkValue.Location = new Point(372, 3);
             lblLinkValue.Name = "lblLinkValue";
             lblLinkValue.Size = new Size(595, 34);
             lblLinkValue.TabIndex = 1;
@@ -629,10 +631,10 @@
             // 
             flowLayoutPanel18.Controls.Add(lblStatus);
             flowLayoutPanel18.Controls.Add(lblStatusValue);
-            flowLayoutPanel18.Location = new Point(23, 487);
+            flowLayoutPanel18.Location = new Point(24, 487);
             flowLayoutPanel18.Margin = new Padding(3, 3, 3, 20);
             flowLayoutPanel18.Name = "flowLayoutPanel18";
-            flowLayoutPanel18.Padding = new Padding(100, 0, 0, 0);
+            flowLayoutPanel18.Padding = new Padding(101, 0, 0, 0);
             flowLayoutPanel18.Size = new Size(1000, 35);
             flowLayoutPanel18.TabIndex = 15;
             // 
@@ -640,7 +642,7 @@
             // 
             lblStatus.BackColor = Color.Transparent;
             lblStatus.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(103, 3);
+            lblStatus.Location = new Point(104, 3);
             lblStatus.Margin = new Padding(3, 3, 30, 3);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(137, 33);
@@ -651,7 +653,7 @@
             // 
             lblStatusValue.BackColor = Color.Transparent;
             lblStatusValue.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatusValue.Location = new Point(273, 3);
+            lblStatusValue.Location = new Point(274, 3);
             lblStatusValue.Name = "lblStatusValue";
             lblStatusValue.Size = new Size(143, 34);
             lblStatusValue.TabIndex = 1;
@@ -661,7 +663,7 @@
             // 
             btnBack.BorderRadius = 30;
             btnBack.Cursor = Cursors.Hand;
-            btnBack.CustomizableEdges = customizableEdges1;
+            btnBack.CustomizableEdges = customizableEdges3;
             btnBack.DisabledState.BorderColor = Color.DarkGray;
             btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -671,10 +673,10 @@
             btnBack.FillColor2 = Color.Gainsboro;
             btnBack.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBack.ForeColor = Color.Black;
-            btnBack.Location = new Point(900, 721);
-            btnBack.Margin = new Padding(900, 40, 3, 3);
+            btnBack.Location = new Point(600, 721);
+            btnBack.Margin = new Padding(600, 40, 3, 3);
             btnBack.Name = "btnBack";
-            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnBack.Size = new Size(329, 89);
             btnBack.TabIndex = 2;
             btnBack.Text = "QUAY LẠI";

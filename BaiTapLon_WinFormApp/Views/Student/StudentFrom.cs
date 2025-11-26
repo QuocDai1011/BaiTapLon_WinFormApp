@@ -1,24 +1,25 @@
 ﻿using BaiTapLon_WinFormApp.Models;
 using BaiTapLon_WinFormApp.Repositories.Implementations;
+using BaiTapLon_WinFormApp.Services;
 using BaiTapLon_WinFormApp.Services.Implementations;
 using BaiTapLon_WinFormApp.Services.Interfaces;
-using Guna.UI2.WinForms;
+using BaiTapLon_WinFormApp.Views.SystemAcess.Login;
 using EnglishCenterManagement.UI.Views.Student.Component;
+using Guna.UI2.WinForms;
+using System.Drawing.Printing;
+using static Guna.UI2.WinForms.Suite.Descriptions;
 
 namespace EnglishCenterManagement.UI.Views
 {
     public partial class StudentFrom : Form
     {
-        private readonly IStudentService _studentService;
-        private readonly EnglishCenterDbContext _context;
-        private int _studentId;
-        public StudentFrom(int studentId)
+        private readonly ServiceHub _serviceHub;
+        private readonly int _studentId;
+        public StudentFrom(ServiceHub serviceHub, int studentId)
         {
             InitializeComponent();
             _studentId = studentId;
-            _context = new EnglishCenterDbContext(); // gán cho biến thành viên
-            var studentRepo = new StudentRepository(_context);
-            _studentService = new StudentService(studentRepo, _context);
+            _serviceHub = serviceHub;
 
             RenderActions();
             RenderRightActions();
@@ -124,7 +125,6 @@ namespace EnglishCenterManagement.UI.Views
                     Icon = Image.FromFile(GetAsset("bell.png")),
                     OnClick = () => MessageBox.Show("Trang Home")
                 }
-
             };
 
             foreach (var icon in icons)
@@ -143,6 +143,8 @@ namespace EnglishCenterManagement.UI.Views
 
                 flowRightActions.Controls.Add(btn);
             }
+
+            flowRightActions.Controls.Add(RenderButton_SignOut());
         }
 
         private void RenderSideBarAction()
@@ -175,7 +177,7 @@ namespace EnglishCenterManagement.UI.Views
                 new SidebarItem()
                 {
                     Icon = Image.FromFile(GetAsset("store.png")),
-                    Text = "Marketplace",
+                    Text = "Mua khóa học",
                     OnClick = () => renderCourse(_studentId)
                 },
                 new SidebarItem()
@@ -233,7 +235,7 @@ namespace EnglishCenterManagement.UI.Views
         private void RenderDetailStudent(int studentId)
         {
             // Tạo control và truyền service vào
-            var control = new DetailStudent(_studentService);
+            var control = new DetailStudent(_serviceHub.StudentService);
 
             // Load dữ liệu ở đây
             control.LoadDetailStudent(studentId);
@@ -261,7 +263,7 @@ namespace EnglishCenterManagement.UI.Views
             };
 
             // Lấy danh sách lớp đã đăng ký
-            var classes = _studentService.GetRegisteredCourses(studentId);
+            var classes = _serviceHub.StudentService.GetRegisteredCourses(studentId);
 
             if (classes == null || classes.Count == 0)
             {
@@ -299,7 +301,7 @@ namespace EnglishCenterManagement.UI.Views
                 AutoSize = false
             };
 
-            var courses = _studentService.GetAvailableCourses(studentId);
+            var courses = _serviceHub.StudentService.GetAvailableCourses(studentId);
 
             if (courses == null || courses.Count == 0)
             {
@@ -309,7 +311,7 @@ namespace EnglishCenterManagement.UI.Views
 
             foreach (var c in courses)
             {
-                var item = new UC_Course(studentId, _studentService, _context);
+                var item = new UC_Course(studentId, _serviceHub.StudentService);
 
                 item.LoadCourse(c);
 
@@ -323,6 +325,41 @@ namespace EnglishCenterManagement.UI.Views
             panelControl.Controls.Add(flowPanel);
         }
 
+        private Guna2Button RenderButton_SignOut()
+        {
+            Guna2Button btnSignOut = new Guna2Button();
+
+            btnSignOut.Text = "Đăng xuất";
+            btnSignOut.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnSignOut.ForeColor = Color.White;
+
+            btnSignOut.Size = new Size(120, 40);
+            btnSignOut.BorderRadius = 10;
+            btnSignOut.Margin = new Padding(0, 20, 0, 0);
+
+            btnSignOut.FillColor = Color.FromArgb(220, 53, 69);
+            btnSignOut.HoverState.FillColor = Color.FromArgb(200, 35, 51);
+
+            btnSignOut.Cursor = Cursors.Hand;
+
+            btnSignOut.Click += (s, e) =>
+            {
+                DialogResult result = MessageBox.Show(
+                    "Bạn có chắc muốn đăng xuất?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    this.Dispose();
+                    new LoginForm(_serviceHub).ShowDialog();
+                }
+            };
+
+            return btnSignOut;
+        }
 
     }
 }

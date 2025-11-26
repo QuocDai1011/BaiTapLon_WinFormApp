@@ -1,4 +1,5 @@
-﻿using BaiTapLon_WinFormApp.Views.Teacher.UserControls;
+﻿using BaiTapLon_WinFormApp.Views.SystemAcess.Login;
+using BaiTapLon_WinFormApp.Views.Teacher.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -142,8 +143,8 @@ namespace BaiTapLon_WinFormApp.Views.Teacher
 
             if (rs == DialogResult.Yes)
             {
-                MessageBox.Show("Đăng xuất thành công");
-                Close();
+                this.Dispose();
+                new LoginForm(_serviceHub).ShowDialog();
             }
         }
 

@@ -1,4 +1,4 @@
-﻿using BaiTapLon_WinFormApp.Models;
+using BaiTapLon_WinFormApp.Models;
 using BaiTapLon_WinFormApp.Repositories.Interfaces;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +24,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             {
                 MessageBox.Show(ex.InnerException?.Message ?? ex.Message);
             }
-
         }
 
         public void AddStudentCourse(StudentCourse sc)
@@ -38,7 +37,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             {
                 MessageBox.Show(ex.InnerException?.Message ?? ex.Message);
             }
-
         }
 
         public List<Course> GetAllCourse()
@@ -56,11 +54,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             return _context.Courses
                 .Where(c => !registerCourses.Contains(c.CourseId))
                 .ToList();
-        }
-
-        public Student GetById(int studentId)
-        {
-            return _context.Students.Find(studentId);
         }
 
         public List<Class> GetRegisterCourse(int studentId)
@@ -97,8 +90,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             {
                 MessageBox.Show(ex.InnerException?.Message ?? ex.Message);
             }
-
-
         }
 
         public void UpdateReceipt(Receipt receipt)
@@ -112,7 +103,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             {
                 MessageBox.Show(ex.InnerException?.Message ?? ex.Message);
             }
-
         }
 
         public void AddStudentToClass(int studentId, int courseId)
@@ -135,6 +125,7 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
                 }
             }
         }
+
         public string createStudent(Student student)
         {
             string errorMessage = "";
@@ -143,10 +134,10 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
                 _context.Students.Add(student);
                 _context.SaveChanges();
             }
-            catch(SqlException sqlEx)
+            catch (SqlException sqlEx)
             {
                 // Handle SQL duplicate key errors with friendly messages
-                if (sqlEx.Number ==2627 || sqlEx.Number ==2601)
+                if (sqlEx.Number == 2627 || sqlEx.Number == 2601)
                 {
                     var lower = (sqlEx.GetBaseException()?.Message ?? sqlEx.Message).ToLowerInvariant();
                     if (lower.Contains("ix_students_user_name") || lower.Contains("user_name"))
@@ -163,7 +154,7 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             {
                 var baseEx = ex.GetBaseException();
                 // If inner is SqlException, handle duplicate key
-                if (baseEx is SqlException innerSql && (innerSql.Number ==2627 || innerSql.Number ==2601))
+                if (baseEx is SqlException innerSql && (innerSql.Number == 2627 || innerSql.Number == 2601))
                 {
                     var lower = (innerSql.GetBaseException()?.Message ?? innerSql.Message).ToLowerInvariant();
                     if (lower.Contains("ix_students_user_name") || lower.Contains("user_name"))
@@ -182,10 +173,9 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
 
         public string deleteStudent(int studentId)
         {
-
             string errorMessage = "";
             Student? student = getById(studentId);
-            if(student != null)
+            if (student != null)
             {
                 try
                 {
@@ -226,7 +216,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
 
         public Student? getById(int studentId)
         {
-
             try
             {
                 return _context.Students.Find(studentId);
@@ -239,7 +228,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             {
                 return null;
             }
-
         }
 
         public Student? getStudentByEmail(string email)
@@ -247,17 +235,15 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
             try
             {
                 return _context.Students.FirstOrDefault(t => t.Email == email);
-
-            }catch(Exception sqlEx)
+            }
+            catch (Exception sqlEx)
             {
                 return null;
             }
-
         }
 
         public string updateStudent(Student student)
         {
-
             string errorMessage = "";
             try
             {
@@ -273,7 +259,17 @@ namespace BaiTapLon_WinFormApp.Repositories.Implementations
                 errorMessage = ex.GetBaseException()?.Message ?? ex.Message;
             }
             return errorMessage;
+        }
 
+        public Course? getCourseById(int courseId)
+        {
+            try
+            {
+                return _context.Courses.Find(courseId);
+            }catch(Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

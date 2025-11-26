@@ -7,14 +7,13 @@ namespace EnglishCenterManagement.UI.Views.Student.Component
     public partial class UC_Course : UserControl
     {
         private readonly IStudentService _studentService;
-        private readonly EnglishCenterDbContext _context;
+        private readonly int _studentId;
         private Course _course;
-        private int _studentId;
-        public UC_Course(int studentId, IStudentService studentService, EnglishCenterDbContext context)
+
+        public UC_Course(int studentId, IStudentService studentService)
         {
             InitializeComponent();
             _studentService = studentService;
-            _context = context;
             _studentId = studentId;
         }
 

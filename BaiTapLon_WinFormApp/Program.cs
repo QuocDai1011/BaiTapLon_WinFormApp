@@ -40,7 +40,7 @@ namespace BaiTapLon_WinFormApp
             //Đăng ký các repository cho Repository ở đây
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
-            services.AddSingleton<IClassRepository, ClassRepository>();
+            services.AddScoped<IClassRepository, ClassRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<ITeacherRepository, TeacherRepository>();
             services.AddScoped<IAdminRepository, AdminRepository>();
@@ -48,7 +48,7 @@ namespace BaiTapLon_WinFormApp
             //Đăng ký các service cho Service ở đây
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IAuthService, AuthService>();
-            services.AddSingleton<IClassService, ClassService>();
+            services.AddScoped<IClassService, ClassService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<ITeacherService, TeacherService>();
@@ -73,6 +73,7 @@ namespace BaiTapLon_WinFormApp
             services.AddTransient<TeacherMainForm>();
             services.AddTransient<StudentFrom>();
 
+            Application.EnableVisualStyles();
             // 5. Build provider
             var provider = services.BuildServiceProvider();
 

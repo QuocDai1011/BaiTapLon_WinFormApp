@@ -9,7 +9,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Interfaces
 {
     public interface IStudentRepository
     {
-        Student GetById(int studentId);
         List<Class> GetRegisterCourse(int studentId);
         List<Course> GetAvailableCourse(int studentId);
         void UpdateById(int studentId, Student student);
@@ -30,5 +29,6 @@ namespace BaiTapLon_WinFormApp.Repositories.Interfaces
 
         Student? getStudentByEmail(string email);
 
+        Course? getCourseById(int courseId);
     }
 }

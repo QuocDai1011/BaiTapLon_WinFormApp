@@ -105,9 +105,10 @@
             pnContent.Dock = DockStyle.Fill;
             pnContent.FlowDirection = FlowDirection.TopDown;
             pnContent.Location = new Point(0, 0);
+            pnContent.Margin = new Padding(3, 2, 3, 2);
             pnContent.Name = "pnContent";
-            pnContent.Padding = new Padding(50, 10, 50, 10);
-            pnContent.Size = new Size(2274, 1265);
+            pnContent.Padding = new Padding(44, 8, 44, 8);
+            pnContent.Size = new Size(1990, 949);
             pnContent.TabIndex = 5;
             // 
             // pnTopContent
@@ -115,12 +116,12 @@
             pnTopContent.Controls.Add(ptbAvt);
             pnTopContent.Controls.Add(lblName);
             pnTopContent.CustomizableEdges = customizableEdges2;
-            pnTopContent.Location = new Point(52, 30);
-            pnTopContent.Margin = new Padding(2, 20, 2, 2);
+            pnTopContent.Location = new Point(46, 23);
+            pnTopContent.Margin = new Padding(2, 15, 2, 2);
             pnTopContent.Name = "pnTopContent";
-            pnTopContent.Padding = new Padding(67, 13, 67, 13);
+            pnTopContent.Padding = new Padding(10, 0, 59, 10);
             pnTopContent.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            pnTopContent.Size = new Size(2120, 211);
+            pnTopContent.Size = new Size(1300, 158);
             pnTopContent.TabIndex = 10;
             pnTopContent.Paint += pnTopContent_Paint;
             // 
@@ -129,12 +130,12 @@
             ptbAvt.ErrorImage = Properties.Resources.user;
             ptbAvt.Image = Properties.Resources.user;
             ptbAvt.ImageRotate = 0F;
-            ptbAvt.Location = new Point(953, 15);
+            ptbAvt.Location = new Point(780, 11);
             ptbAvt.Margin = new Padding(2);
             ptbAvt.Name = "ptbAvt";
             ptbAvt.ShadowDecoration.CustomizableEdges = customizableEdges1;
             ptbAvt.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            ptbAvt.Size = new Size(100, 100);
+            ptbAvt.Size = new Size(88, 75);
             ptbAvt.SizeMode = PictureBoxSizeMode.Zoom;
             ptbAvt.TabIndex = 2;
             ptbAvt.TabStop = false;
@@ -142,11 +143,11 @@
             // lblName
             // 
             lblName.BackColor = Color.Transparent;
-            lblName.Font = new Font("Times New Roman", 15.8571434F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(943, 149);
-            lblName.Margin = new Padding(2);
+            lblName.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            lblName.Location = new Point(776, 102);
+            lblName.Margin = new Padding(20, 2, 2, 10);
             lblName.Name = "lblName";
-            lblName.Size = new Size(110, 32);
+            lblName.Size = new Size(66, 21);
             lblName.TabIndex = 1;
             lblName.Text = "Quốc Đại";
             lblName.Click += lblNameProfile_Click;
@@ -163,31 +164,33 @@
             pnBottomContent.Controls.Add(flowLayoutPanel8);
             pnBottomContent.Controls.Add(flowLayoutPanel9);
             pnBottomContent.FlowDirection = FlowDirection.TopDown;
-            pnBottomContent.Location = new Point(53, 246);
+            pnBottomContent.Location = new Point(47, 185);
+            pnBottomContent.Margin = new Padding(3, 2, 3, 2);
             pnBottomContent.Name = "pnBottomContent";
-            pnBottomContent.Padding = new Padding(600, 30, 200, 20);
-            pnBottomContent.Size = new Size(2119, 943);
+            pnBottomContent.Padding = new Padding(425, 22, 175, 15);
+            pnBottomContent.Size = new Size(1300, 707);
             pnBottomContent.TabIndex = 1;
+            pnBottomContent.Paint += pnBottomContent_Paint;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(guna2HtmlLabel1);
             flowLayoutPanel1.Controls.Add(txtID);
-            flowLayoutPanel1.Location = new Point(603, 33);
-            flowLayoutPanel1.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel1.Location = new Point(428, 24);
+            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel1.Size = new Size(969, 80);
+            flowLayoutPanel1.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel1.Size = new Size(848, 60);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(103, 25);
-            guna2HtmlLabel1.Margin = new Padding(3, 15, 3, 3);
+            guna2HtmlLabel1.Location = new Point(91, 19);
+            guna2HtmlLabel1.Margin = new Padding(3, 11, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(123, 27);
+            guna2HtmlLabel1.Size = new Size(94, 22);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "ID của bạn:";
             // 
@@ -203,36 +206,36 @@
             txtID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtID.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtID.Location = new Point(249, 14);
-            txtID.Margin = new Padding(20, 4, 6, 5);
+            txtID.Location = new Point(206, 11);
+            txtID.Margin = new Padding(18, 3, 5, 4);
             txtID.Name = "txtID";
-            txtID.Padding = new Padding(20, 0, 0, 0);
+            txtID.Padding = new Padding(18, 0, 0, 0);
             txtID.PlaceholderText = "";
             txtID.ReadOnly = true;
             txtID.SelectedText = "";
             txtID.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            txtID.Size = new Size(688, 52);
+            txtID.Size = new Size(602, 39);
             txtID.TabIndex = 1;
             // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Controls.Add(guna2HtmlLabel2);
             flowLayoutPanel2.Controls.Add(txtFullName);
-            flowLayoutPanel2.Location = new Point(603, 126);
-            flowLayoutPanel2.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel2.Location = new Point(428, 94);
+            flowLayoutPanel2.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel2.Size = new Size(969, 80);
+            flowLayoutPanel2.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel2.Size = new Size(848, 60);
             flowLayoutPanel2.TabIndex = 2;
             // 
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(103, 25);
-            guna2HtmlLabel2.Margin = new Padding(3, 15, 3, 3);
+            guna2HtmlLabel2.Location = new Point(91, 19);
+            guna2HtmlLabel2.Margin = new Padding(3, 11, 3, 2);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(107, 27);
+            guna2HtmlLabel2.Size = new Size(84, 22);
             guna2HtmlLabel2.TabIndex = 0;
             guna2HtmlLabel2.Text = "Họ và tên: ";
             // 
@@ -248,35 +251,35 @@
             txtFullName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtFullName.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFullName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtFullName.Location = new Point(233, 14);
-            txtFullName.Margin = new Padding(20, 4, 6, 5);
+            txtFullName.Location = new Point(196, 11);
+            txtFullName.Margin = new Padding(18, 3, 5, 4);
             txtFullName.Name = "txtFullName";
-            txtFullName.Padding = new Padding(20, 0, 0, 0);
+            txtFullName.Padding = new Padding(18, 0, 0, 0);
             txtFullName.PlaceholderText = "";
             txtFullName.SelectedText = "";
             txtFullName.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            txtFullName.Size = new Size(704, 52);
+            txtFullName.Size = new Size(616, 39);
             txtFullName.TabIndex = 1;
             // 
             // flowLayoutPanel3
             // 
             flowLayoutPanel3.Controls.Add(guna2HtmlLabel3);
             flowLayoutPanel3.Controls.Add(txtUsername);
-            flowLayoutPanel3.Location = new Point(603, 219);
-            flowLayoutPanel3.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel3.Location = new Point(428, 164);
+            flowLayoutPanel3.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel3.Size = new Size(969, 80);
+            flowLayoutPanel3.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel3.Size = new Size(848, 60);
             flowLayoutPanel3.TabIndex = 3;
             // 
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(103, 25);
-            guna2HtmlLabel3.Margin = new Padding(3, 15, 3, 3);
+            guna2HtmlLabel3.Location = new Point(91, 19);
+            guna2HtmlLabel3.Margin = new Padding(3, 11, 3, 2);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(162, 27);
+            guna2HtmlLabel3.Size = new Size(124, 22);
             guna2HtmlLabel3.TabIndex = 0;
             guna2HtmlLabel3.Text = "Tên đăng nhập:";
             // 
@@ -292,36 +295,36 @@
             txtUsername.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtUsername.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtUsername.Location = new Point(288, 14);
-            txtUsername.Margin = new Padding(20, 4, 6, 5);
+            txtUsername.Location = new Point(236, 11);
+            txtUsername.Margin = new Padding(18, 3, 5, 4);
             txtUsername.Name = "txtUsername";
-            txtUsername.Padding = new Padding(20, 0, 0, 0);
+            txtUsername.Padding = new Padding(18, 0, 0, 0);
             txtUsername.PlaceholderText = "";
             txtUsername.ReadOnly = true;
             txtUsername.SelectedText = "";
             txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            txtUsername.Size = new Size(649, 52);
+            txtUsername.Size = new Size(568, 39);
             txtUsername.TabIndex = 1;
             // 
             // flowLayoutPanel4
             // 
             flowLayoutPanel4.Controls.Add(guna2HtmlLabel4);
             flowLayoutPanel4.Controls.Add(txtEmail);
-            flowLayoutPanel4.Location = new Point(603, 312);
-            flowLayoutPanel4.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel4.Location = new Point(428, 234);
+            flowLayoutPanel4.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel4.Size = new Size(969, 80);
+            flowLayoutPanel4.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel4.Size = new Size(848, 60);
             flowLayoutPanel4.TabIndex = 4;
             // 
             // guna2HtmlLabel4
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel4.Location = new Point(103, 25);
-            guna2HtmlLabel4.Margin = new Padding(3, 15, 3, 3);
+            guna2HtmlLabel4.Location = new Point(91, 19);
+            guna2HtmlLabel4.Margin = new Padding(3, 11, 3, 2);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(67, 27);
+            guna2HtmlLabel4.Size = new Size(53, 22);
             guna2HtmlLabel4.TabIndex = 0;
             guna2HtmlLabel4.Text = "Email:";
             // 
@@ -337,36 +340,36 @@
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEmail.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(193, 14);
-            txtEmail.Margin = new Padding(20, 4, 6, 5);
+            txtEmail.Location = new Point(165, 11);
+            txtEmail.Margin = new Padding(18, 3, 5, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Padding = new Padding(20, 0, 0, 0);
+            txtEmail.Padding = new Padding(18, 0, 0, 0);
             txtEmail.PlaceholderText = "";
             txtEmail.ReadOnly = true;
             txtEmail.SelectedText = "";
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            txtEmail.Size = new Size(744, 52);
+            txtEmail.Size = new Size(651, 39);
             txtEmail.TabIndex = 1;
             // 
             // flowLayoutPanel5
             // 
             flowLayoutPanel5.Controls.Add(guna2HtmlLabel5);
             flowLayoutPanel5.Controls.Add(txtGender);
-            flowLayoutPanel5.Location = new Point(603, 405);
-            flowLayoutPanel5.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel5.Location = new Point(428, 304);
+            flowLayoutPanel5.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel5.Size = new Size(969, 80);
+            flowLayoutPanel5.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel5.Size = new Size(848, 60);
             flowLayoutPanel5.TabIndex = 5;
             // 
             // guna2HtmlLabel5
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel5.Location = new Point(103, 25);
-            guna2HtmlLabel5.Margin = new Padding(3, 15, 3, 3);
+            guna2HtmlLabel5.Location = new Point(91, 19);
+            guna2HtmlLabel5.Margin = new Padding(3, 11, 3, 2);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(98, 27);
+            guna2HtmlLabel5.Size = new Size(78, 22);
             guna2HtmlLabel5.TabIndex = 0;
             guna2HtmlLabel5.Text = "Giới tính:";
             // 
@@ -382,35 +385,35 @@
             txtGender.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGender.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtGender.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGender.Location = new Point(224, 14);
-            txtGender.Margin = new Padding(20, 4, 6, 5);
+            txtGender.Location = new Point(190, 11);
+            txtGender.Margin = new Padding(18, 3, 5, 4);
             txtGender.Name = "txtGender";
-            txtGender.Padding = new Padding(20, 0, 0, 0);
+            txtGender.Padding = new Padding(18, 0, 0, 0);
             txtGender.PlaceholderText = "";
             txtGender.SelectedText = "";
             txtGender.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            txtGender.Size = new Size(713, 52);
+            txtGender.Size = new Size(624, 39);
             txtGender.TabIndex = 1;
             // 
             // flowLayoutPanel6
             // 
             flowLayoutPanel6.Controls.Add(guna2HtmlLabel6);
             flowLayoutPanel6.Controls.Add(txtDateOfBirth);
-            flowLayoutPanel6.Location = new Point(603, 498);
-            flowLayoutPanel6.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel6.Location = new Point(428, 374);
+            flowLayoutPanel6.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
-            flowLayoutPanel6.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel6.Size = new Size(969, 80);
+            flowLayoutPanel6.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel6.Size = new Size(848, 60);
             flowLayoutPanel6.TabIndex = 6;
             // 
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel6.Location = new Point(103, 25);
-            guna2HtmlLabel6.Margin = new Padding(3, 15, 3, 3);
+            guna2HtmlLabel6.Location = new Point(91, 19);
+            guna2HtmlLabel6.Margin = new Padding(3, 11, 3, 2);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(223, 27);
+            guna2HtmlLabel6.Size = new Size(173, 22);
             guna2HtmlLabel6.TabIndex = 0;
             guna2HtmlLabel6.Text = "Ngày tháng năm sinh:";
             // 
@@ -426,35 +429,35 @@
             txtDateOfBirth.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDateOfBirth.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDateOfBirth.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDateOfBirth.Location = new Point(349, 14);
-            txtDateOfBirth.Margin = new Padding(20, 4, 6, 5);
+            txtDateOfBirth.Location = new Point(285, 11);
+            txtDateOfBirth.Margin = new Padding(18, 3, 5, 4);
             txtDateOfBirth.Name = "txtDateOfBirth";
-            txtDateOfBirth.Padding = new Padding(20, 0, 0, 0);
+            txtDateOfBirth.Padding = new Padding(18, 0, 0, 0);
             txtDateOfBirth.PlaceholderText = "";
             txtDateOfBirth.SelectedText = "";
             txtDateOfBirth.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            txtDateOfBirth.Size = new Size(588, 52);
+            txtDateOfBirth.Size = new Size(514, 39);
             txtDateOfBirth.TabIndex = 1;
             // 
             // flowLayoutPanel7
             // 
             flowLayoutPanel7.Controls.Add(guna2HtmlLabel7);
             flowLayoutPanel7.Controls.Add(txtPhoneNumber);
-            flowLayoutPanel7.Location = new Point(603, 591);
-            flowLayoutPanel7.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel7.Location = new Point(428, 444);
+            flowLayoutPanel7.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel7.Name = "flowLayoutPanel7";
-            flowLayoutPanel7.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel7.Size = new Size(969, 80);
+            flowLayoutPanel7.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel7.Size = new Size(848, 60);
             flowLayoutPanel7.TabIndex = 7;
             // 
             // guna2HtmlLabel7
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
             guna2HtmlLabel7.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel7.Location = new Point(103, 25);
-            guna2HtmlLabel7.Margin = new Padding(3, 15, 3, 3);
+            guna2HtmlLabel7.Location = new Point(91, 19);
+            guna2HtmlLabel7.Margin = new Padding(3, 11, 3, 2);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(140, 27);
+            guna2HtmlLabel7.Size = new Size(111, 22);
             guna2HtmlLabel7.TabIndex = 0;
             guna2HtmlLabel7.Text = "Số điện thoại:";
             // 
@@ -470,35 +473,35 @@
             txtPhoneNumber.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPhoneNumber.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPhoneNumber.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPhoneNumber.Location = new Point(266, 14);
-            txtPhoneNumber.Margin = new Padding(20, 4, 6, 5);
+            txtPhoneNumber.Location = new Point(223, 11);
+            txtPhoneNumber.Margin = new Padding(18, 3, 5, 4);
             txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Padding = new Padding(20, 0, 0, 0);
+            txtPhoneNumber.Padding = new Padding(18, 0, 0, 0);
             txtPhoneNumber.PlaceholderText = "";
             txtPhoneNumber.SelectedText = "";
             txtPhoneNumber.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            txtPhoneNumber.Size = new Size(671, 52);
+            txtPhoneNumber.Size = new Size(587, 39);
             txtPhoneNumber.TabIndex = 1;
             // 
             // flowLayoutPanel8
             // 
             flowLayoutPanel8.Controls.Add(guna2HtmlLabel8);
             flowLayoutPanel8.Controls.Add(txtAddress);
-            flowLayoutPanel8.Location = new Point(603, 684);
-            flowLayoutPanel8.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel8.Location = new Point(428, 514);
+            flowLayoutPanel8.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
-            flowLayoutPanel8.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel8.Size = new Size(969, 80);
+            flowLayoutPanel8.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel8.Size = new Size(848, 60);
             flowLayoutPanel8.TabIndex = 8;
             // 
             // guna2HtmlLabel8
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
             guna2HtmlLabel8.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel8.Location = new Point(103, 25);
-            guna2HtmlLabel8.Margin = new Padding(3, 15, 3, 3);
+            guna2HtmlLabel8.Location = new Point(91, 19);
+            guna2HtmlLabel8.Margin = new Padding(3, 11, 3, 2);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            guna2HtmlLabel8.Size = new Size(81, 27);
+            guna2HtmlLabel8.Size = new Size(63, 22);
             guna2HtmlLabel8.TabIndex = 0;
             guna2HtmlLabel8.Text = "Địa chỉ:";
             // 
@@ -514,25 +517,25 @@
             txtAddress.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtAddress.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtAddress.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAddress.Location = new Point(207, 14);
-            txtAddress.Margin = new Padding(20, 4, 6, 5);
+            txtAddress.Location = new Point(175, 11);
+            txtAddress.Margin = new Padding(18, 3, 5, 4);
             txtAddress.Name = "txtAddress";
-            txtAddress.Padding = new Padding(20, 0, 0, 0);
+            txtAddress.Padding = new Padding(18, 0, 0, 0);
             txtAddress.PlaceholderText = "";
             txtAddress.SelectedText = "";
             txtAddress.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            txtAddress.Size = new Size(730, 52);
+            txtAddress.Size = new Size(639, 39);
             txtAddress.TabIndex = 1;
             // 
             // flowLayoutPanel9
             // 
             flowLayoutPanel9.Controls.Add(btnSave);
             flowLayoutPanel9.Controls.Add(btnChangePassword);
-            flowLayoutPanel9.Location = new Point(603, 777);
-            flowLayoutPanel9.Margin = new Padding(3, 3, 3, 10);
+            flowLayoutPanel9.Location = new Point(428, 584);
+            flowLayoutPanel9.Margin = new Padding(3, 2, 3, 8);
             flowLayoutPanel9.Name = "flowLayoutPanel9";
-            flowLayoutPanel9.Padding = new Padding(100, 10, 10, 10);
-            flowLayoutPanel9.Size = new Size(969, 80);
+            flowLayoutPanel9.Padding = new Padding(88, 8, 9, 8);
+            flowLayoutPanel9.Size = new Size(848, 60);
             flowLayoutPanel9.TabIndex = 9;
             // 
             // btnSave
@@ -547,11 +550,11 @@
             btnSave.FillColor = Color.LimeGreen;
             btnSave.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(190, 13);
-            btnSave.Margin = new Padding(90, 3, 3, 3);
+            btnSave.Location = new Point(167, 10);
+            btnSave.Margin = new Padding(79, 2, 3, 2);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            btnSave.Size = new Size(300, 56);
+            btnSave.Size = new Size(262, 42);
             btnSave.TabIndex = 0;
             btnSave.Text = "Lưu";
             btnSave.Click += btnSave_Click;
@@ -567,22 +570,23 @@
             btnChangePassword.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnChangePassword.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold);
             btnChangePassword.ForeColor = Color.White;
-            btnChangePassword.Location = new Point(503, 13);
-            btnChangePassword.Margin = new Padding(10, 3, 3, 3);
+            btnChangePassword.Location = new Point(441, 10);
+            btnChangePassword.Margin = new Padding(9, 2, 3, 2);
             btnChangePassword.Name = "btnChangePassword";
             btnChangePassword.ShadowDecoration.CustomizableEdges = customizableEdges23;
-            btnChangePassword.Size = new Size(300, 56);
+            btnChangePassword.Size = new Size(262, 42);
             btnChangePassword.TabIndex = 1;
             btnChangePassword.Text = "Đổi mật khẩu";
             btnChangePassword.Click += btnChangePassword_Click;
             // 
             // UCProfile
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pnContent);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UCProfile";
-            Size = new Size(2274, 1265);
+            Size = new Size(1990, 949);
             pnContent.ResumeLayout(false);
             pnTopContent.ResumeLayout(false);
             pnTopContent.PerformLayout();

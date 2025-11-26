@@ -13,28 +13,22 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
     public class StudentService : IStudentService
     {
         private readonly IStudentRepository _studentRepository;
-        private readonly IStudentRepository _repo;
-        private readonly EnglishCenterDbContext _context;
 
-        public StudentService(IStudentRepository studentRepository, EnglishCenterDbContext context)
+        public StudentService(IStudentRepository studentRepository)
         {
             _studentRepository = studentRepository;
-            _repo = studentRepository;
-            _context = context;
         }
 
         public bool BuyCourse(int studentId, Course course, string payMethod)
         {
-            if (_context == null)
-                throw new Exception("_context chưa được khởi tạo");
 
             // Kiểm tra xem đã có StudentCourse chưa
-            var sc = _repo.GetStudentCourse(studentId, course.CourseId);
+            var sc = _studentRepository.GetStudentCourse(studentId, course.CourseId);
             if (sc == null)
             {
                 // Load entity Student và Course từ DB để EF biết principal
-                var student = _context.Students.Find(studentId);
-                var courseEntity = _context.Courses.Find(course.CourseId);
+                var student = _studentRepository.getById(studentId);
+                var courseEntity = _studentRepository.getCourseById(course.CourseId);
 
                 if (student == null || courseEntity == null)
                     throw new Exception("Student hoặc Course không tồn tại trong DB");
@@ -50,7 +44,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                     Course = courseEntity
                 };
 
-                _repo.AddStudentCourse(sc);
+                _studentRepository.AddStudentCourse(sc);
             }
 
             // Tạo Receipt
@@ -65,7 +59,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                 StudentCourse = sc
             };
 
-            _repo.AddReceipt(receipt);
+            _studentRepository.AddReceipt(receipt);
 
             // Thanh toán mô phỏng (mở browser)
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
@@ -77,19 +71,20 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
             // Giả lập thanh toán thành công
             receipt.Status = "Paid";
             receipt.PaymentDate = DateTime.Now;
-            _repo.UpdateReceipt(receipt);
+            _studentRepository.UpdateReceipt(receipt);
 
-            _repo.AddStudentToClass(studentId, course.CourseId);
+            _studentRepository.AddStudentToClass(studentId, course.CourseId);
 
             return true;
         }
 
         public List<Course> GetAvailableCourses(int studentId)
         {
-            var student = _repo.GetById(studentId);
+            var student = _studentRepository.getById(studentId);
             if (student == null) throw new Exception("Không tìm thấy sinh viên");
 
-            return _repo.GetAvailableCourse(studentId);
+
+            return _studentRepository.GetAvailableCourse(studentId);
         }
 
         public string createStudent(Student student)
@@ -189,10 +184,10 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
 
         public List<Class> GetRegisteredCourses(int studentId)
         {
-            var registerCourses = _repo.GetById(studentId);
+            var registerCourses = _studentRepository.getById(studentId);
             if (registerCourses == null) throw new Exception("không tìm thấy sinh viên");
 
-            return _repo.GetRegisterCourse(studentId);
+            return _studentRepository.GetRegisterCourse(studentId);
         }
 
         public bool UpdateStudent(int studentId, Student student)
@@ -205,7 +200,7 @@ namespace BaiTapLon_WinFormApp.Services.Implementations
                 throw new Exception("Các trường dữ liệu bị trống");
             }
 
-            _repo.UpdateById(studentId, student);
+            _studentRepository.UpdateById(studentId, student);
             return true;
         }
     }

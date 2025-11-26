@@ -1,5 +1,6 @@
 ﻿using BaiTapLon_WinFormApp.Models;
 using BaiTapLon_WinFormApp.Services;
+using BaiTapLon_WinFormApp.Views.SystemAcess.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,8 @@ namespace BaiTapLon_WinFormApp.Views.Admin.ProfileUI
         private Color darkPanelColor = Color.FromArgb(48, 48, 48);
         private Color lightTextColor = Color.FromArgb(66, 66, 66);
         private Color darkTextColor = Color.FromArgb(220, 220, 220);
+        public event EventHandler LogoutClicked;
+
         public UserProfile(ServiceHub serviceHub, string email)
         {
             InitializeComponent();
@@ -172,10 +175,6 @@ namespace BaiTapLon_WinFormApp.Views.Admin.ProfileUI
         {
             string selectedLanguage = cboLanguage.SelectedItem.ToString();
 
-            MessageBox.Show($"Đã chuyển sang: {selectedLanguage}\n\n" +
-                          "Bạn có thể implement logic đa ngôn ngữ ở đây.",
-                          "Thay đổi ngôn ngữ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             OnLanguageChanged(new LanguageChangedEventArgs(selectedLanguage));
         }
 
@@ -190,7 +189,8 @@ namespace BaiTapLon_WinFormApp.Views.Admin.ProfileUI
 
             if (result == DialogResult.Yes)
             {
-                OnLogoutRequested(EventArgs.Empty);
+                LogoutClicked?.Invoke(this, EventArgs.Empty);
+
             }
         }
 
@@ -353,6 +353,7 @@ namespace BaiTapLon_WinFormApp.Views.Admin.ProfileUI
                     (120 - size.Width) / 2, (120 - size.Height) / 2);
             }
             pictureBoxAvatar.Image = bmp;
+            pictureBoxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         // Lấy chữ cái đầu

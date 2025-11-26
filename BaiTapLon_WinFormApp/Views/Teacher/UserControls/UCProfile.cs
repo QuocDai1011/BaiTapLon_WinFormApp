@@ -172,5 +172,10 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
         {
 
         }
+
+        private void pnBottomContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

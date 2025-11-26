@@ -77,7 +77,6 @@ public partial class Student
     [InverseProperty("Student")]
     public virtual ICollection<StudentExercise> StudentExercises { get; set; } = new List<StudentExercise>();
 
-    [ForeignKey("StudentId")]
     [InverseProperty("Students")]
     public virtual ICollection<Class> Classes { get; set; } = new List<Class>();
 }

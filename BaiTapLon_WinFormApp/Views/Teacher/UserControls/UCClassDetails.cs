@@ -57,11 +57,11 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
             lblCurrentStudentValue.Text = _class.CurrentStudent.ToString();
             lblStartDateValue.Text = _class.StartDate.ToString("dd/MM/yyyy");
             lblEndDateValue.Text = _class.EndDate.ToString("dd/MM/yyyy");
-            if(_class.Shift == 1)
+            if (_class.Shift == 1)
             {
                 lblShiftValue.Text = "8:00";
             }
-            else if(_class.Shift == 2)
+            else if (_class.Shift == 2)
             {
                 lblShiftValue.Text = "14:00";
             }
@@ -73,7 +73,8 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
             if (_class.Status == false)
             {
                 lblStatusValue.ForeColor = Color.Red;
-            }else
+            }
+            else
             {
                 lblStatusValue.ForeColor = Color.Green;
             }
@@ -87,6 +88,16 @@ namespace BaiTapLon_WinFormApp.Views.Teacher.UserControls
         private void btnBack_Click(object sender, EventArgs e)
         {
             LoadUC(new UCMyClass(_serviceHub, _teacherId, _parentContainer));
+        }
+
+        private void lblClassNameValue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHeadingClassDetail_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
