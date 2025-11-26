@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Controllers\" />
     <Folder Include="DataHelpers\" />
@@ -51,9 +61,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Views\SystemAccess\assets\img\logo-login.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

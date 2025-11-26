@@ -72,6 +72,7 @@ namespace BaiTapLon_WinFormApp
 
             // 6. Chạy WinForms
             ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
             Application.Run(provider.GetRequiredService<LoginForm>());
         }
     }
